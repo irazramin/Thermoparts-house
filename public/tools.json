@@ -1,0 +1,50 @@
+[
+  {
+    "name": "Pediatric Dental",
+    "price": 44,
+    "desc": "",
+    "img": "https://tiimg.tistatic.com/fp/1/007/406/220-and-440-voltage-heater-panel-for-ductable-and-air-handling-unit-222-w410.jpg",
+    "moq": 50,
+    "available": 342
+  },
+  {
+    "name": "Air Blower",
+    "price": 20,
+    "desc": "",
+    "img": "https://cpimg.tistatic.com/03005873/b/4/Air-Blower-w410.jpg",
+    "moq": 35,
+    "available": 630
+  },
+  {
+    "name": "Brass Air Conditioner Part",
+    "price": 30,
+    "desc": "",
+    "img": "https://cpimg.tistatic.com/02228061/b/4/Brass-Air-Conditioner-Part--w410.jpg",
+    "moq": 6,
+    "available": 200
+  },
+  {
+    "name": "1 Hp Single Phase Air Conditioner Fan Motor",
+    "price": 10,
+    "desc": "",
+    "img": "https://cpimg.tistatic.com/05873566/b/4/1-HP-Single-Phase-Air-Conditioner-Fan-Motor-w410.jpg",
+    "moq": 40,
+    "available": 450
+  },
+  {
+    "name": "Air Conditioner Copper Pipe",
+    "price": 120,
+    "desc": "",
+    "img": "https://tiimg.tistatic.com/fp/1/007/006/air-conditioner-copper-pipe-982-w410.jpg",
+    "moq": 40,
+    "available": 700
+  },
+  {
+    "name": "Leakage Proof Air Conditioner",
+    "price": 50,
+    "desc": "",
+    "img": "https://tiimg.tistatic.com/fp/1/007/330/leakage-proof-air-conditioner-refrigeration-service-valve-383-w410.jpg",
+    "moq": 60,
+    "available": 500
+  }
+]
