@@ -2,8 +2,7 @@ import { signOut } from 'firebase/auth';
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
-import Button from './Button';
-import auth from "../../Firebase.init"
+import auth from "../../Firebase.init";
 const Header = () => {
   const [user] = useAuthState(auth);
 
@@ -72,22 +71,22 @@ const Header = () => {
               </li>
             ) : (
               <>
-                <li>
+                <div>
                   <Link
                     to='/login'
                     className='btn btn-primary btn-sm text-white mx-1'
                   >
                     Login
                   </Link>
-                </li>
-                <li>
+                </div>
+                <div>
                   <Link
                     to='/signup'
                     className='btn btn-outline btn-sm text-primary mx-1 hover:bg-primary'
                   >
                     Signup
                   </Link>
-                </li>
+                </div>
               </>
             )}
           </>
