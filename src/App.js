@@ -8,13 +8,14 @@ import MyPortfolio from './Components/Pages/My Portfolio/MyPortfolio';
 import Header from './Components/Shared/Header';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Home from './Components/Pages/Home/Home';
 function App() {
   return (
     <div>
       <Header />
-      <div className='container mx-auto'>
+      <div className=''>
         <Routes>
-          <Route path='/' />
+          <Route path='/' element={<Home />} />
           <Route path='/dashboard' element={<Dashboard />} />
           <Route path='/blogs' element={<Blogs />} />
           <Route path='/myportfolio' element={<MyPortfolio />} />
