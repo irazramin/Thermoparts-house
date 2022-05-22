@@ -1,14 +1,15 @@
 import { Route, Routes } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import './App.css';
 import Login from './Components/Pages/Authentication/Login';
 import Signup from './Components/Pages/Authentication/Signup';
 import Blogs from './Components/Pages/Blogs/Blogs';
 import Dashboard from './Components/Pages/Dashboard/Dashboard';
-import MyPortfolio from './Components/Pages/My Portfolio/MyPortfolio';
-import Header from './Components/Shared/Header';
-import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 import Home from './Components/Pages/Home/Home';
+import MyPortfolio from './Components/Pages/My Portfolio/MyPortfolio';
+import ErrorPage from './Components/Shared/ErrorPage';
+import Header from './Components/Shared/Header';
 function App() {
   return (
     <div>
@@ -21,6 +22,7 @@ function App() {
           <Route path='/myportfolio' element={<MyPortfolio />} />
           <Route path='/login' element={<Login />} />
           <Route path='/signup' element={<Signup />} />
+          <Route path='*' element={<ErrorPage />} />
         </Routes>
       </div>
       <ToastContainer
