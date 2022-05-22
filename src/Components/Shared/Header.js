@@ -25,7 +25,7 @@ const Header = () => {
          {user ? (
            <li>
              <button
-               className='btn btn-outline btn-sm text-primary mx-1 hover:bg-primary'
+               className='btn btn-outline btn-sm text-primary mx-1 hover:bg-primary my-1 lg:my-0'
                onClick={() => {
                  signOut(auth);
                  localStorage.removeItem('accessToken');

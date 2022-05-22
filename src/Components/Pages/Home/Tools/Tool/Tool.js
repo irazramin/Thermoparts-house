@@ -19,7 +19,7 @@ const Tool = ({tool}) => {
               <span className='font-bold text-primary'>${price} /piece</span>
             </span>
           </p>
-          <div className='bg-secondary px-4 justify-between py-[2px] text-white  flex items-center rounded mt-3'>
+          <div className='bg-secondary px-4 justify-between py-3 text-white  rounded mt-3'>
             <p className=' '>MOQ : {moq}</p>
             <p>Available quantity : {available}</p>
           </div>

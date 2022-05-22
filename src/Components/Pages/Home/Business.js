@@ -36,7 +36,7 @@ const Business = () => {
                   <>
                     <div className='content' />
                     <span className='lg:text-5xl'>
-                      {<CountUp end={540} enableScrollSpy />}K+
+                      {<CountUp end={80} enableScrollSpy />}K+
                     </span>
                     <br />
                     <span className='hidden' id='counter' />
@@ -81,7 +81,7 @@ const Business = () => {
                   <>
                     <div className='content' />
                     <span className='lg:text-5xl'>
-                      {<CountUp end={70} enableScrollSpy />}K+
+                      {<CountUp end={60} enableScrollSpy />}K+
                     </span>
                     <br />
                     <span className='hidden' id='counter' />
