@@ -16,7 +16,7 @@ const Business = () => {
             <div class='mx-auto container w-full flex flex-col justify-center items-center'>
               <div class='flex justify-center items-center flex-col'>
                 <div class='mt-20'>
-                  <h2 class='lg:text-6xl md:text-5xl text-4xl  text-center mb-3 font-semibold text-white '>
+                  <h2 class='lg:text-6xl md:text-5xl text-4xl  text-center mb-6 font-semibold text-white '>
                     About <span className='text-accent'>out Business</span>
                   </h2>
                 </div>

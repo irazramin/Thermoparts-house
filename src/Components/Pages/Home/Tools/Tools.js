@@ -21,7 +21,7 @@ const Tools = () => {
   }
   return (
     <div className='container mx-auto mb-6'>
-      <h3 className='my-10 text-3xl text-gray-900 text-center mb-3 font-semibold uppercase'>
+      <h3 className='my-10 text-3xl text-gray-900 text-center mb-6 font-semibold uppercase'>
         Our <span className='text-accent'>manufacture tools</span>
       </h3>
       <div className='grid grid-cols-1 lg:grid-cols-2  gap-8'>

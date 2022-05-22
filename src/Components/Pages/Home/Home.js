@@ -1,5 +1,6 @@
 import React from 'react'
 import Footer from '../../Shared/Footer'
+import Aboutus from './Aboutus'
 import Banner from './Banner'
 import Business from './Business'
 import Reviews from './Reviews/Reviews'
@@ -14,6 +15,7 @@ const Home = () => {
         <Business/>
         <Services/>
         <Reviews />
+        <Aboutus />
         <Footer/>
     </div>
   )

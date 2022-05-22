@@ -5,7 +5,7 @@ import pipe from "../../../assests/pipe.png";
 const Services = () => {
   return (
     <div className='container mx-auto'>
-      <h2 className='text-3xl text-gray-900 text-center mb-3 font-semibold uppercase'>
+      <h2 className='text-3xl text-gray-900 text-center mb-6 font-semibold uppercase'>
         Our
          <span className='text-accent'> Services</span>
       </h2>
