@@ -1,8 +1,9 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Tool = ({tool}) => {
-    const {img,name,desc,moq,available,price} = tool;
-    // https://tiimg.tistatic.com/fp/1/007/406/220-and-440-voltage-heater-panel-for-ductable-and-air-handling-unit-222-w410.jpg
+    const {_id,img,name,desc,moq,available,price} = tool;
+    const navigate = useNavigate()
   return (
     <>
       <div class='card card-side text-gray-900 shadow-xl flex flex-col md:flex-row border-[1px]  border-primary'>
@@ -11,11 +12,7 @@ const Tool = ({tool}) => {
         </figure>
         <div class='card-body'>
           <h2 class='card-title'>{name}</h2>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, amet.
-            Eum, ipsa! Eius sapiente ullam, deserunt corporis iusto nesciunt
-            alias!
-          </p>
+          <p>{desc}</p>
           <p>
             price :{' '}
             <span className='font-semibold'>
@@ -27,7 +24,12 @@ const Tool = ({tool}) => {
             <p>Available quantity : {available}</p>
           </div>
           <div class='card-actions justify-end mt-3'>
-            <button class='btn btn-primary btn-sm  text-white'>purchase</button>
+            <button
+              onClick={() => navigate(`purchase/${_id}`)}
+              class='btn btn-primary btn-sm  text-white'
+            >
+              purchase
+            </button>
           </div>
         </div>
       </div>

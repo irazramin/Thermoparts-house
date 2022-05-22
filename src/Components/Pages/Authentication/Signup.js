@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-    useAuthState,
+  useAuthState,
   useCreateUserWithEmailAndPassword,
   useSignInWithGoogle,
   useUpdateProfile,
@@ -13,7 +13,6 @@ import useToken from '../../hooks/useToken';
 import Loading from '../../Shared/Loading';
 
 const Signup = () => {
-    const [currentUser] = useAuthState(auth)
   const {
     register,
     formState: { errors },
@@ -23,21 +22,21 @@ const Signup = () => {
   const [signInWithGoogle, user2, loading2, error2] = useSignInWithGoogle(auth);
   const [createUserWithEmailAndPassword, user, loading, error] =
     useCreateUserWithEmailAndPassword(auth);
-  const [token] = useToken(currentUser)
+  const [token] = useToken(user || user2);
   const navigate = useNavigate();
 
-  if(loading || loading2){
-      return <Loading />
+  if (loading || loading2) {
+    return <Loading />;
   }
 
-  if(token){
-      navigate('/');
+  if (token) {
+    navigate('/');
   }
   const onSubmit = async (data) => {
-    await createUserWithEmailAndPassword(data.email, data.password).then(() =>{
-        if(!error){
-            toast.success('Signup successful');
-        }
+    await createUserWithEmailAndPassword(data.email, data.password).then(() => {
+      if (!error) {
+        toast.success('Signup successful');
+      }
     });
     await updateProfile({ displayName: data.name });
   };
@@ -239,7 +238,7 @@ const Signup = () => {
                     </a>
                   </li>
                 </ul>
-            
+
                 <p class='text-base text-[#adadad]'>
                   Already have an account?
                   <button
