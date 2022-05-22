@@ -16,8 +16,8 @@ const Business = () => {
             <div class='mx-auto container w-full flex flex-col justify-center items-center'>
               <div class='flex justify-center items-center flex-col'>
                 <div class='mt-20'>
-                  <h2 class='lg:text-6xl md:text-5xl text-4xl font-black leading-10 text-white'>
-                    About out Business
+                  <h2 class='lg:text-6xl md:text-5xl text-4xl  text-center mb-3 font-semibold text-white '>
+                    About <span className='text-accent'>out Business</span>
                   </h2>
                 </div>
                 <div class='mt-6 mx-2 md:mx-0 text-center'>
@@ -88,7 +88,7 @@ const Business = () => {
                   </>
                 </h2>
                 <p class='mt-4 text-sm md:text-base lg:text-lg leading-none text-center text-gray-600'>
-                 Reviews
+                  Reviews
                 </p>
               </div>
             </div>

@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { useQuery } from 'react-query';
 import Loading from '../../../Shared/Loading';
 import Tool from './Tool/Tool';
 
@@ -22,8 +21,8 @@ const Tools = () => {
   }
   return (
     <div className='container mx-auto mb-6'>
-      <h3 className='my-10 text-center text-secondary font-bold text-3xl'>
-        Our manufacture tools
+      <h3 className='my-10 text-3xl text-gray-900 text-center mb-3 font-semibold uppercase'>
+        Our <span className='text-accent'>manufacture tools</span>
       </h3>
       <div className='grid grid-cols-1 lg:grid-cols-2  gap-8'>
         {tools.map((tool) => (
