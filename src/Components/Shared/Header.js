@@ -22,6 +22,38 @@ const Header = () => {
              <Link to='/dashboard'>Dashboard</Link>
            </li>
          )}
+         {user ? (
+           <li>
+             <button
+               className='btn btn-outline btn-sm text-primary mx-1 hover:bg-primary'
+               onClick={() => {
+                 signOut(auth);
+                 localStorage.removeItem('accessToken');
+               }}
+             >
+               Sign out
+             </button>
+           </li>
+         ) : (
+           <>
+             <div>
+               <Link
+                 to='/login'
+                 className='btn btn-primary btn-sm text-white mx-1 my-1 lg:my-0'
+               >
+                 Login
+               </Link>
+             </div>
+             <div>
+               <Link
+                 to='/signup'
+                 className='btn btn-outline btn-sm text-primary mx-1 hover:bg-primary my-1 lg:my-0'
+               >
+                 Signup
+               </Link>
+             </div>
+           </>
+         )}
        </>
      );
   return (
@@ -55,41 +87,11 @@ const Header = () => {
           <a class='btn btn-ghost normal-case text-xl'>daisyUI</a>
         </div>
         <div class='navbar-center hidden lg:flex navbar-end'>
-          <ul class='menu menu-horizontal p-0'>{navItems}</ul>
-          <>
-            {user ? (
-              <li>
-                <button
-                  className='btn btn-outline'
-                  onClick={() => {
-                    signOut(auth);
-                    //    localStorage.removeItem('accessToken');
-                  }}
-                >
-                  Sign out
-                </button>
-              </li>
-            ) : (
-              <>
-                <div>
-                  <Link
-                    to='/login'
-                    className='btn btn-primary btn-sm text-white mx-1'
-                  >
-                    Login
-                  </Link>
-                </div>
-                <div>
-                  <Link
-                    to='/signup'
-                    className='btn btn-outline btn-sm text-primary mx-1 hover:bg-primary'
-                  >
-                    Signup
-                  </Link>
-                </div>
-              </>
-            )}
-          </>
+          <ul class='menu menu-horizontal p-0 flex justify-center items-center'>
+            
+              {navItems}
+             
+          </ul>
         </div>
       </div>
     </div>

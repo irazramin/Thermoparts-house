@@ -1,14 +1,17 @@
 import React, { useState } from 'react';
 import {
+    useAuthState,
     useSignInWithEmailAndPassword,
     useSignInWithGoogle
 } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
 import { useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../../Firebase.init';
+import useToken from '../../hooks/useToken';
 import Loading from '../../Shared/Loading';
 
 const Login = () => {
+    const [currentUser] = useAuthState(auth);
   const [signInWithGoogle, user2, loading2, error2] = useSignInWithGoogle(auth);
   const {
     register,
@@ -18,12 +21,16 @@ const Login = () => {
   const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
 
-  // const [token] = useToken(user || gUser);
+  const [token] = useToken(user || user2);
 
   const navigate = useNavigate();
   const location = useLocation();
   let from = location.state?.from?.pathname || '/';
 
+  console.log(token)
+  if(token){
+      navigate(from,{replace:true});
+  }
   if(loading || loading2){
       return <Loading />
   }
