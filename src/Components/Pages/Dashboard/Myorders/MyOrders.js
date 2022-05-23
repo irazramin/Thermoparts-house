@@ -24,7 +24,6 @@ const MyOrders = () => {
       if (isLoading) {
         return <Loading></Loading>;
       }
-      console.log(orders)
   return (
     <div className='mt-10'>
       {orders.length === 0 ? (

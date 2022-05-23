@@ -18,12 +18,16 @@ const Purchase = () => {
 
   useEffect(() => {
     setIsLoading(true);
-    fetch(`http://localhost:5000/tools/${id}`)
+    fetch(`http://localhost:5000/tools/${id}`, {
+      method: 'GET',
+      headers: {
+        authorization: `bearer ${localStorage.getItem('accessToken')}`,
+      },
+    })
       .then((res) => res.json())
       .then((data) => {
         setTool(data);
         setQuantity(data.moq);
-        console.log(data);
         setIsLoading(false);
       });
   }, [id, setTool]);
