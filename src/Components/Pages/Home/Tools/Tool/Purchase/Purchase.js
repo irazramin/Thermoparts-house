@@ -11,8 +11,8 @@ import Modal from './Modal';
 const Purchase = () => {
   const [user] = useAuthState(auth);
   const { id } = useParams();
-  const [tool, setTool] = useState({});
   const [quantity, setQuantity] = useState(0);
+  const [tool, setTool] = useState({});
   const [isLoading, setIsLoading] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -33,6 +33,7 @@ const Purchase = () => {
   }
 
   const handleIncrease = () => {
+    
     if (quantity <= tool.available) {
       setQuantity(quantity + 1);
     } else {

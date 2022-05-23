@@ -9,33 +9,42 @@ const Modal = ({ user, tool, quantity, isModalOpen, setIsModalOpen }) => {
     const address = e.target.address.value;
     const totalAmount = tool.price * quantity;
     const order = {
-      email : user?.email,
-      name : user?.displayName,
-      phone : phone,
-      address : address,
-      partsName : tool?.name,
-      quantity : quantity,
+      email: user?.email,
+      name: user?.displayName,
+      phone: phone,
+      address: address,
+      partsName: tool?.name,
+      quantity: quantity,
       totalAmount: totalAmount,
-      paid:false,
-    }
+      paid: false,
+    };
 
-    fetch(`http://localhost:5000/order`,{
-      method:"POST",
-      headers:{
-        "Content-type" :"application/json",
+    fetch(`http://localhost:5000/order`, {
+      method: 'POST',
+      headers: {
+        'Content-type': 'application/json',
       },
-      body:JSON.stringify(order)
+      body: JSON.stringify(order),
     })
-    .then(res => res.json())
-    .then(data =>{
-     if(data.result.acknowledged){
-       toast.success("Purchase successfully")
-     }
-    })
-
-    console.log(order)
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.result.acknowledged) {
+          toast.success('Purchase successfully');
+          const available = tool.available - quantity;
+          fetch(`http://localhost:5000/tools/${tool._id}`, {
+            method: 'PATCH',
+            headers:{
+              "Content-type" :"application/json",
+            },
+            body:JSON.stringify({available})
+          })
+            .then((res) => res.json())
+            .then((data) => {
+              console.log(data)
+            });
+        }
+      });
   };
-  console.log(isModalOpen);
   return (
     <>
       <input type='checkbox' id='my-modal-3' class='modal-toggle' />
