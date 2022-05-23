@@ -7,10 +7,12 @@ const Dashboard = () => {
   const [user] = useAuthState(auth);
   return (
     <div>
-      <div class='drawer drawer-mobile'>
+      <div class='drawer drawer-mobile w-full'>
         <input id='my-drawer-2' type='checkbox' class='drawer-toggle' />
-        <div class='drawer-content flex flex-col items-center justify-center'>
-          <h2>Hello {user?.displayName}, Welcome to dashboard</h2>
+        <div class='drawer-content  items-center mt-8 w-[85%] mx-auto'>
+          <h2 className='text-3xl font-semibold text-gray-900'>
+            Hello <span className='text-accent'>{user?.displayName}</span>, Welcome to dashboard
+          </h2>
           <Outlet />
           {/* <!-- Page content here --> */}
           <label

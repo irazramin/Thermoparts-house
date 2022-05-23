@@ -8,7 +8,7 @@ import Signup from './Components/Pages/Authentication/Signup';
 import Blogs from './Components/Pages/Blogs/Blogs';
 import AddAReview from './Components/Pages/Dashboard/AddAReview';
 import Dashboard from './Components/Pages/Dashboard/Dashboard';
-import MyOrders from './Components/Pages/Dashboard/MyOrders';
+import MyOrders from './Components/Pages/Dashboard/Myorders/MyOrders';
 import MyProfile from './Components/Pages/Dashboard/MyProfile';
 import Home from './Components/Pages/Home/Home';
 import Purchase from './Components/Pages/Home/Tools/Tool/Purchase/Purchase';

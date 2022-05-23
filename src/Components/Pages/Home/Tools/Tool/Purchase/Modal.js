@@ -15,7 +15,7 @@ const Modal = ({ user, tool, quantity, isModalOpen, setIsModalOpen }) => {
       partsName : tool?.name,
       quantity : quantity,
       totalAmount: totalAmount,
-      pain:false,
+      paid:false,
     }
 
     fetch(`http://localhost:5000/order`,{
