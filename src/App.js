@@ -7,6 +7,10 @@ import RequireAuth from './Components/Pages/Authentication/RequireAuth/RequireAu
 import Signup from './Components/Pages/Authentication/Signup';
 import Blogs from './Components/Pages/Blogs/Blogs';
 import AddAReview from './Components/Pages/Dashboard/AddAReview';
+import AddProduct from './Components/Pages/Dashboard/Admin/AddProduct';
+import MakeAdmin from './Components/Pages/Dashboard/Admin/MakeAdmin';
+import ManageAllOrders from './Components/Pages/Dashboard/Admin/ManageAllOrders';
+import ManageProducts from './Components/Pages/Dashboard/Admin/ManageProducts';
 import Dashboard from './Components/Pages/Dashboard/Dashboard';
 import MyOrders from './Components/Pages/Dashboard/Myorders/MyOrders';
 import Payment from './Components/Pages/Dashboard/Myorders/Payment/Payment';
@@ -43,6 +47,11 @@ function App() {
             <Route path='myorder' element={<MyOrders />} />
             <Route path='payment/:id' element={<Payment />} />
             <Route path='addreview' element={<AddAReview />} />
+            <Route path='addproduct' element={<AddProduct />} />
+            <Route path='makeadmin' element={<MakeAdmin />} />
+            <Route path='manageallorders' element={<ManageAllOrders />} />
+            <Route path='manageproducts' element={<ManageProducts />} />
+
           </Route>
           <Route path='/blogs' element={<Blogs />} />
           <Route path='/myportfolio' element={<MyPortfolio />} />

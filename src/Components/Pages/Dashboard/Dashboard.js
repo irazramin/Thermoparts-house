@@ -47,16 +47,16 @@ const Dashboard = () => {
             {isAdmin && (
               <>
                 <li>
-                  <Link to='myorder'>Manage All Orders</Link>
+                  <Link to='manageallorders'>Manage All Orders</Link>
                 </li>
                 <li>
-                  <Link to='addreview'>Add A Product</Link>
+                  <Link to='addproduct'>Add A Product</Link>
                 </li>
                 <li>
-                  <Link to='addreview'>Make Admin</Link>
+                  <Link to='makeadmin'>Make Admin</Link>
                 </li>
                 <li>
-                  <Link to='addreview'>Manage Products</Link>
+                  <Link to='manageproducts'>Manage Products</Link>
                 </li>
               </>
             )}
