@@ -116,8 +116,8 @@ const Purchase = () => {
           <div className='text-right'>
             <label
               onClick={() => setIsModalOpen(true)}
-              for='my-modal-3'
-              class='relative bottom-0 ml-auto btn btn-outline  text-white  mt-10 -mr-7 modal-button'
+              htmlFor='my-modal-3'
+              className='relative bottom-0 ml-auto btn btn-outline  text-white  mt-10 -mr-7 modal-button'
             >
               Place Order
             </label>
@@ -132,13 +132,13 @@ const Purchase = () => {
         />
       </a>
 
-      <div class='modal text-black' id='my-modal-2'>
-        <div class='modal-box'>
-          <h3 class='font-bold text-lg'>User info!</h3>
-          <p class='py-4'>Name : {user?.displayName}</p>
-          <p class=''>Email : {user?.email}</p>
-          <div class='modal-action'>
-            <a href='#' class='btn'>
+      <div className='modal text-black' id='my-modal-2'>
+        <div className='modal-box'>
+          <h3 className='font-bold text-lg'>User info!</h3>
+          <p className='py-4'>Name : {user?.displayName}</p>
+          <p className=''>Email : {user?.email}</p>
+          <div className='modal-action'>
+            <a href='#' className='btn'>
               Yay!
             </a>
           </div>

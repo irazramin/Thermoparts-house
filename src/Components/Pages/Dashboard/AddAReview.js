@@ -39,9 +39,9 @@ const AddAReview = () => {
     }
   return (
     <div className='mt-20'>
-      <div class='flex justify-center'>
-        <div class='block p-6 rounded-lg shadow-lg bg-white '>
-          <h5 class='text-gray-900 text-xl leading-tight font-medium mb-2'>
+      <div className='flex justify-center'>
+        <div className='block p-6 rounded-lg shadow-lg bg-white '>
+          <h5 className='text-gray-900 text-xl leading-tight font-medium mb-2'>
             Add a review
           </h5>
           <form onSubmit={handleSubmitReview}>
@@ -63,7 +63,7 @@ const AddAReview = () => {
               name='name'
               value={user?.displayName}
               disabled
-              class='
+              className='
                         w-full
                         rounded-md
                         border
@@ -83,7 +83,7 @@ const AddAReview = () => {
               type='text'
               placeholder='City'
               name='city'
-              class='
+              className='
                         w-full
                         rounded-md
                         border
@@ -112,7 +112,7 @@ const AddAReview = () => {
             <div className='text-right'>
               <button
                 type='submit'
-                class=' bg-primary text-white btn-sm btn border-0'
+                className=' bg-primary text-white btn-sm btn border-0'
               >
                 Review
               </button>

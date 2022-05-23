@@ -47,12 +47,12 @@ const Modal = ({ user, tool, quantity, isModalOpen, setIsModalOpen }) => {
   };
   return (
     <>
-      <input type='checkbox' id='my-modal-3' class='modal-toggle' />
-      <div class='modal text-black'>
-        <div class='modal-box relative'>
+      <input type='checkbox' id='my-modal-3' className='modal-toggle' />
+      <div className='modal text-black'>
+        <div className='modal-box relative'>
           <label
-            for='my-modal-3'
-            class='btn btn-sm btn-circle absolute right-2 top-2'
+            htmlFor='my-modal-3'
+            className='btn btn-sm btn-circle absolute right-2 top-2'
           >
             ✕
           </label>
@@ -67,14 +67,14 @@ const Modal = ({ user, tool, quantity, isModalOpen, setIsModalOpen }) => {
             </span>
           </h2>
           <form onSubmit={orderPlace} className='mt-10 mx-10'>
-            <div class='mb-5'>
+            <div className='mb-5'>
               <input
                 type='text'
                 placeholder='Name'
                 name='name'
                 value={user?.displayName}
                 disabled
-                class='
+                className='
                         w-full
                         rounded-md
                         border
@@ -90,14 +90,14 @@ const Modal = ({ user, tool, quantity, isModalOpen, setIsModalOpen }) => {
                         '
               />
             </div>
-            <div class='mb-5'>
+            <div className='mb-5'>
               <input
                 type='email'
                 placeholder='Email'
                 name='email'
                 value={user?.email}
                 disabled
-                class='
+                className='
                         w-full
                         rounded-md
                         border
@@ -113,12 +113,12 @@ const Modal = ({ user, tool, quantity, isModalOpen, setIsModalOpen }) => {
                         '
               />
             </div>
-            <div class='mb-5'>
+            <div className='mb-5'>
               <input
                 type='number'
                 placeholder='Phone'
                 name='phone'
-                class='
+                className='
                         w-full
                         rounded-md
                         border
@@ -134,12 +134,12 @@ const Modal = ({ user, tool, quantity, isModalOpen, setIsModalOpen }) => {
                         '
               />
             </div>
-            <div class='mb-5'>
+            <div className='mb-5'>
               <input
                 type='text'
                 placeholder='Address'
                 name='address'
-                class='
+                className='
                         w-full
                         rounded-md
                         border
@@ -160,8 +160,8 @@ const Modal = ({ user, tool, quantity, isModalOpen, setIsModalOpen }) => {
               <input
                 type='submit'
                 value='Confirm Order'
-                for='my-modal-3'
-                class='btn btn-sm btn-primary'
+                htmlFor='my-modal-3'
+                className='btn btn-sm btn-primary'
               />
             </div>
           </form>

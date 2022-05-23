@@ -51,12 +51,12 @@ const Login = () => {
 
   return (
     <div className=''>
-      <section class='bg-[#F4F7FF] py-20 lg:py-[120px] mx-auto w-full flex items-center justify-center'>
-        <div class='container'>
-          <div class='flex flex-wrap -mx-4'>
-            <div class='w-full px-4'>
+      <section className='bg-[#F4F7FF] py-20 lg:py-[120px] mx-auto w-full flex items-center justify-center'>
+        <div className='container'>
+          <div className='flex flex-wrap -mx-4'>
+            <div className='w-full px-4'>
               <div
-                class='
+                className='
                max-w-[525px]
                mx-auto
                text-center
@@ -70,10 +70,10 @@ const Login = () => {
                md:px-[60px]
                '
               >
-                <div class='mb-10 md:mb-16 text-center'>
+                <div className='mb-10 md:mb-16 text-center'>
                   <a
                     href='javascript:void(0)'
-                    class='inline-block max-w-[160px] mx-auto'
+                    className='inline-block max-w-[160px] mx-auto'
                   >
                     <img
                       src='https://cdn.tailgrids.com/1.0/assets/images/logo/logo.svg'
@@ -82,11 +82,11 @@ const Login = () => {
                   </a>
                 </div>
                 <form onSubmit={handleSubmit(onSubmit)}>
-                  <div class='mb-6'>
+                  <div className='mb-6'>
                     <input
                       type='text'
                       placeholder='Email'
-                      class='
+                      className='
                         w-full
                         rounded-md
                         border
@@ -120,11 +120,11 @@ const Login = () => {
                       )}
                     </div>
                   </div>
-                  <div class='mb-6'>
+                  <div className='mb-6'>
                     <input
                       type='password'
                       placeholder='Password'
-                      class='
+                      className='
                         w-full
                         rounded-md
                         border
@@ -162,11 +162,11 @@ const Login = () => {
                       )}
                     </div>
                   </div>
-                  <div class='mb-7'>
+                  <div className='mb-7'>
                     <input
                       type='submit'
                       value='Sign In'
-                      class='
+                      className='
                         w-full
                         rounded-md
                         border
@@ -184,12 +184,12 @@ const Login = () => {
 
                   <p className='mt-5 text-warning'>{(error || error2)  ? (error?.message || error2?.message) : ''}</p>
                 </form>
-                <p class='text-base mb-6 text-[#adadad]'>Connect With</p>
-                <ul class='flex justify-center items-center -mx-2 mb-6'>
-                  <li class='px-2 w-[140px]' onClick={handleGoogleLogin}>
+                <p className='text-base mb-6 text-[#adadad]'>Connect With</p>
+                <ul className='flex justify-center items-center -mx-2 mb-6'>
+                  <li className='px-2 w-[140px]' onClick={handleGoogleLogin}>
                     <a
                       href='javascript:void(0)'
-                      class='
+                      className='
                         flex
                         h-11
                         items-center
@@ -216,7 +216,7 @@ const Login = () => {
                 </ul>
                 <a
                   href='javascript:void(0)'
-                  class='
+                  className='
                   text-base
                   inline-block
                   mb-2
@@ -226,17 +226,17 @@ const Login = () => {
                 >
                   Forget Password?
                 </a>
-                <p class='text-base text-[#adadad]'>
+                <p className='text-base text-[#adadad]'>
                   Not a member yet?
                   <button
                     onClick={() => navigate('/signup')}
-                    class='text-primary hover:underline'
+                    className='text-primary hover:underline'
                   >
                     Sign Up
                   </button>
                 </p>
                 <div>
-                  <span class='absolute top-1 right-1'>
+                  <span className='absolute top-1 right-1'>
                     <svg
                       width='40'
                       height='40'
@@ -358,7 +358,7 @@ const Login = () => {
                       />
                     </svg>
                   </span>
-                  <span class='absolute left-1 bottom-1'>
+                  <span className='absolute left-1 bottom-1'>
                     <svg
                       width='29'
                       height='40'

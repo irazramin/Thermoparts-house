@@ -31,8 +31,8 @@ const MyOrders = () => {
           <h2 className='text-center flex items-center justify-center h-screen text-4xl -mt-28'>You don't have any order!</h2>
         </>
       ) : (
-        <div class='overflow-x-auto'>
-          <table class='table w-full'>
+        <div className='overflow-x-auto'>
+          <table className='table w-full'>
             <thead>
               <tr className='text-center'>
                 <th></th>
