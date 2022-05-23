@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import ReactStars from 'react-rating-stars-component';
+import { toast } from 'react-toastify';
 import auth from '../../../Firebase.init';
 
 const AddAReview = () => {
@@ -21,7 +22,19 @@ const AddAReview = () => {
             rating
         }
 
-        // fetch()
+        fetch(`http://localhost:5000/review`,{
+            method:"POST",
+            headers:{
+                "Content-type":"application/json",
+            },
+            body:JSON.stringify(review),
+        })
+        .then(res => res.json())
+        .then(data =>{
+            if(data.acknowledged){
+                toast.success('Review  successfully added')
+            }
+        })
         e.target.reset();
     }
   return (

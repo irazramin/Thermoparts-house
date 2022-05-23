@@ -8,7 +8,12 @@ const Tools = () => {
 
   useEffect(() => {
     setIsLoading(true)
-    fetch(`http://localhost:5000/tools`)
+    fetch(`http://localhost:5000/tools`,{
+      method:"GET",
+      headers:{
+        "authorization" : `bearer ${localStorage.getItem('accessToken')}`
+      }
+    })
       .then((res) => res.json())
       .then((data) => {
         setTools(data);
