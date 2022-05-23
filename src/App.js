@@ -9,6 +9,7 @@ import Blogs from './Components/Pages/Blogs/Blogs';
 import AddAReview from './Components/Pages/Dashboard/AddAReview';
 import Dashboard from './Components/Pages/Dashboard/Dashboard';
 import MyOrders from './Components/Pages/Dashboard/Myorders/MyOrders';
+import Payment from './Components/Pages/Dashboard/Myorders/Payment/Payment';
 import MyProfile from './Components/Pages/Dashboard/MyProfile';
 import Home from './Components/Pages/Home/Home';
 import Purchase from './Components/Pages/Home/Tools/Tool/Purchase/Purchase';
@@ -40,6 +41,7 @@ function App() {
           >
             <Route index element={<MyProfile />} />
             <Route path='myorder' element={<MyOrders />} />
+            <Route path='payment/:id' element={<Payment />} />
             <Route path='addreview' element={<AddAReview />} />
           </Route>
           <Route path='/blogs' element={<Blogs />} />

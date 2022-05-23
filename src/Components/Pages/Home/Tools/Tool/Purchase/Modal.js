@@ -1,4 +1,5 @@
 import React from 'react';
+import { toast } from 'react-toastify';
 
 const Modal = ({ user, tool, quantity, isModalOpen, setIsModalOpen }) => {
   const orderPlace = (e) => {
@@ -27,7 +28,9 @@ const Modal = ({ user, tool, quantity, isModalOpen, setIsModalOpen }) => {
     })
     .then(res => res.json())
     .then(data =>{
-      console.log(data)
+     if(data.result.acknowledged){
+       toast.success("Purchase successfully")
+     }
     })
 
     console.log(order)

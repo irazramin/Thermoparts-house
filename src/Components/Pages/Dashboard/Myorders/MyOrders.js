@@ -12,7 +12,14 @@ const MyOrders = () => {
         data: orders,
         isLoading,
         refetch,
-      } = useQuery(['order',email], () => fetch(`http://localhost:5000/order/${email}`).then((res) => res.json()));
+      } = useQuery(['order', email], () =>
+        fetch(`http://localhost:5000/order/${email}`, {
+          method: 'GET',
+          headers: {
+            authorization: `bearer ${localStorage.getItem('accessToken')}`,
+          },
+        }).then((res) => res.json())
+      );
 
       if (isLoading) {
         return <Loading></Loading>;
@@ -28,7 +35,7 @@ const MyOrders = () => {
         <div class='overflow-x-auto'>
           <table class='table w-full'>
             <thead>
-              <tr>
+              <tr className='text-center'>
                 <th></th>
                 <th>Name</th>
                 <th>Product</th>
@@ -40,7 +47,7 @@ const MyOrders = () => {
             </thead>
             <tbody>
               {orders.map((order,idx) => (
-                <Order key={order._id} order={order} idx={idx} />
+                <Order key={order._id} order={order} idx={idx} refetch={refetch}/>
               ))}
             </tbody>
           </table>
