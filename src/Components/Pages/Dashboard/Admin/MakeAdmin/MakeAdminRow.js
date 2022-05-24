@@ -1,7 +1,22 @@
 import React from 'react';
 
-const MakeAdminRow = ({user,idx}) => {
-    const {_id,email,role} = user
+const MakeAdminRow = ({user,idx,refetch}) => {
+    const {_id,email,role} = user;
+
+    const handleMakeAdmin = () =>{
+        fetch(`http://localhost:5000/admin/users/makeadmin/${_id}`, {
+          method: 'PUT',
+          headers: {
+            'content-type': 'application/json',
+          },
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            if (data.acknowledged) {
+              refetch();
+            }
+          });
+    }
   return (
     <tr className='text-gray-800 text-center'>
       <th>{idx + 1}</th>
@@ -10,7 +25,7 @@ const MakeAdminRow = ({user,idx}) => {
       <td>{role ? role : 'user'}</td>
       
       <td>
-          {role !=='admin' ? <><button className='btn btn-xs btn-primary text-white'>Make admin</button></> : ''}
+          {role !=='admin' ? <><button onClick={handleMakeAdmin} className='btn btn-xs btn-primary text-white'>Make admin</button></> : ''}
       </td>
     </tr>
   );

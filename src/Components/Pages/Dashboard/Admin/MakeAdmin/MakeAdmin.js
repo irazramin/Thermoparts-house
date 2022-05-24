@@ -35,7 +35,7 @@ const MakeAdmin = () => {
               </tr>
             </thead>
             <tbody>
-              {users.map((user,idx) => <MakeAdminRow key={user._id} user={user} idx={idx} />)}
+              {users.map((user,idx) => <MakeAdminRow key={user._id} user={user} idx={idx} refetch={refetch} />)}
             </tbody>
           </table>
         </div>
