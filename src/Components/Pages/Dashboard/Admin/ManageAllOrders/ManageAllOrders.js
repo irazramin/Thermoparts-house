@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useQuery } from 'react-query';
+import DeleteItemModal from '../../../../Shared/DeleteItemModal';
 import Loading from '../../../../Shared/Loading';
 import AllOrdersRow from '../ManageAllOrders/AllOrdersRow';
 
 const ManageAllOrders = () => {
+   const [productId, setProductId] = useState('');
+   const [isModalOpen, setIsModalOpen] = useState(false);
+   const url = `http://localhost:5000/admin/order/allorder/`;
   const {
     data: allOrder,
     isLoading,
@@ -30,29 +34,47 @@ const ManageAllOrders = () => {
           </h2>
         </>
       ) : (
-        <div className='overflow-x-auto'>
-          <table className='table w-full'>
-            <thead>
-              <tr className='text-center'>
-                <th></th>
-                <th>ID</th>
-                <th>Name</th>
-                <th>Product</th>
-                <th>Quantity</th>
-                <th>Price</th>
-                <th>Transaction Id</th>
-                <th>Payment Status</th>
-              </tr>
-            </thead>
-            <tbody>
-              {allOrder.map((order, idx) => (
-                <AllOrdersRow order={order} idx={idx} />
-              ))}
-            </tbody>
-          </table>
-        </div>
+        <>
+          <h2 className='my-5 text-2xl font-bold text-gray-900'>All orders</h2>
+            <table className='table w-full'>
+              <thead>
+                <tr className='text-center'>
+                  <th></th>
+                  <th>ID</th>
+                  <th>Name</th>
+                  <th>Product</th>
+                  <th>Quantity</th>
+                  <th>Price</th>
+                  <th>Transaction Id</th>
+                  <th>Shipping Status</th>
+                  <th>Payment Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                {allOrder.map((order, idx) => (
+                  <AllOrdersRow
+                    order={order}
+                    idx={idx}
+                    setProductId={setProductId}
+                    setIsModalOpen={setIsModalOpen}
+                  />
+                ))}
+              </tbody>
+            </table>
+        </>
       )}
-   
+
+      {isModalOpen ? (
+        <DeleteItemModal
+          productId={productId}
+          isModalOpen={isModalOpen}
+          setIsModalOpen={setIsModalOpen}
+          url={url}
+          refetch={refetch}
+        />
+      ) : (
+        ''
+      )}
     </div>
   );
 };

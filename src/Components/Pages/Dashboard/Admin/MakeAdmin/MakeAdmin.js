@@ -23,6 +23,7 @@ const MakeAdmin = () => {
   }
   return (
      <div className='mt-10 w-[90%] mx-auto'>
+       
           <table className='table w-full'>
             <thead>
               <tr className='text-center'>

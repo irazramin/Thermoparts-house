@@ -1,11 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useQuery } from 'react-query';
 import auth from '../../../../Firebase.init';
+import DeleteItemModal from '../../../Shared/DeleteItemModal';
 import Loading from '../../../Shared/Loading';
 import Order from './Order';
 
 const MyOrders = () => {
+  const [productId, setProductId] = useState('');
+  const [isModalOpen, setIsModalOpen] = useState(false);
+    const url = `http://localhost:5000/order/payment/`;
     const [user] = useAuthState(auth)
     const email = user?.email;
       const {
@@ -28,7 +32,9 @@ const MyOrders = () => {
     <div className='mt-10'>
       {orders.length === 0 ? (
         <>
-          <h2 className='text-center flex items-center justify-center h-screen text-4xl -mt-28'>You don't have any order!</h2>
+          <h2 className='text-center flex items-center justify-center h-screen text-4xl -mt-28'>
+            You don't have any order!
+          </h2>
         </>
       ) : (
         <div className='overflow-x-auto'>
@@ -45,12 +51,29 @@ const MyOrders = () => {
               </tr>
             </thead>
             <tbody>
-              {orders.map((order,idx) => (
-                <Order key={order._id} order={order} idx={idx} refetch={refetch}/>
+              {orders.map((order, idx) => (
+                <Order
+                  key={order._id}
+                  order={order}
+                  idx={idx}
+                  setProductId={setProductId}
+                  setIsModalOpen={setIsModalOpen}
+                />
               ))}
             </tbody>
           </table>
         </div>
+      )}
+      {isModalOpen ? (
+        <DeleteItemModal
+          productId={productId}
+          isModalOpen={isModalOpen}
+          setIsModalOpen={setIsModalOpen}
+          url={url}
+          refetch={refetch}
+        />
+      ) : (
+        ''
       )}
     </div>
   );
