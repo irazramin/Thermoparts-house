@@ -5,8 +5,8 @@ import { toast } from 'react-toastify';
 const Order = ({ order, idx, refetch }) => {
   const { partsName, name, paid, quantity, totalAmount, transactionId, _id } =
     order;
-  // const [tool] = useFetchTool(_id);
-  const handleCancelOrder = () => {
+
+    const handleCancelOrder = () => {
     fetch(`http://localhost:5000/order/payment/${_id}`, {
       method: 'DELETE',
     })
@@ -57,6 +57,7 @@ const Order = ({ order, idx, refetch }) => {
                 <h3 className='font-bold text-lg'>Warning</h3>
                 <p className='py-4'>Are you sure ?</p>
                 <div className='modal-action'>
+                  
                   <a href='#' onClick={handleCancelOrder} className='btn'>
                     Cancel
                   </a>

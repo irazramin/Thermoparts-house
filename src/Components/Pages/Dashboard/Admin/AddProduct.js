@@ -1,4 +1,5 @@
 import React from 'react';
+import { toast } from 'react-toastify';
 
 const AddProduct = () => {
   const handleSubmitProduct = (e) => {
@@ -10,16 +11,29 @@ const AddProduct = () => {
     const moq = e.target.moq.value;
     const desc = e.target.desc.value;
 
-    const addProduct = {
+    const addedProduct = {
       name,
-      price,
+      price:parseInt(price),
       img,
-      available,
-      moq,
+      available:parseInt(available),
+      moq:parseInt(moq),
       desc
     }
 
-    
+    fetch(`http://localhost:5000/tools`, {
+      method: 'POST',
+      headers: {
+      'content-type':'application/json'
+      },
+      body:JSON.stringify(addedProduct)
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if(data.acknowledged){
+          toast.success('Product successfully added')
+          e.target.reset();
+        }
+      });
   };
   return (
     <div className='w-[70%] mx-auto my-10'>
@@ -52,7 +66,7 @@ const AddProduct = () => {
                         '
               />
               <input
-                type='text'
+                type='number'
                 placeholder='Price per piece'
                 name='price'
                 className='
@@ -75,7 +89,7 @@ const AddProduct = () => {
             </div>
             <div className='grid grid-cols-2 gap-5'>
               <input
-                type='text'
+                type='number'
                 placeholder='Minimum order quantity'
                 name='moq'
                 
@@ -97,7 +111,7 @@ const AddProduct = () => {
                         '
               />
               <input
-                type='text'
+                type='number'
                 placeholder='Available quantity'
                 name='available'
                 className='
@@ -154,7 +168,7 @@ const AddProduct = () => {
                 type='submit'
                 className=' bg-primary text-white btn-sm btn border-0'
               >
-                Review
+                Add product
               </button>
             </div>
           </form>
