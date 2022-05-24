@@ -7,13 +7,13 @@ import AllOrdersRow from '../ManageAllOrders/AllOrdersRow';
 const ManageAllOrders = () => {
    const [productId, setProductId] = useState('');
    const [isModalOpen, setIsModalOpen] = useState(false);
-   const url = `http://localhost:5000/admin/order/allorder/`;
+   const url = `https://thermopartshouse.herokuapp.com/admin/order/allorder/`;
   const {
     data: allOrder,
     isLoading,
     refetch,
   } = useQuery('allorders', () =>
-    fetch(`http://localhost:5000/admin/order/allorder`, {
+    fetch(`https://thermopartshouse.herokuapp.com/admin/order/allorder`, {
       method: 'GET',
       headers: {
         authorization: `bearer ${localStorage.getItem('accessToken')}`,
@@ -36,6 +36,7 @@ const ManageAllOrders = () => {
       ) : (
         <>
           <h2 className='my-5 text-2xl font-bold text-gray-900'>All orders</h2>
+          <div className='overflow-x-auto'>
             <table className='table w-full'>
               <thead>
                 <tr className='text-center'>
@@ -61,6 +62,7 @@ const ManageAllOrders = () => {
                 ))}
               </tbody>
             </table>
+          </div>
         </>
       )}
 

@@ -9,7 +9,7 @@ import Order from './Order';
 const MyOrders = () => {
   const [productId, setProductId] = useState('');
   const [isModalOpen, setIsModalOpen] = useState(false);
-    const url = `http://localhost:5000/order/payment/`;
+    const url = `https://thermopartshouse.herokuapp.com/order/payment/`;
     const [user] = useAuthState(auth)
     const email = user?.email;
       const {
@@ -17,7 +17,7 @@ const MyOrders = () => {
         isLoading,
         refetch,
       } = useQuery(['order', email], () =>
-        fetch(`http://localhost:5000/order/${email}`, {
+        fetch(`https://thermopartshouse.herokuapp.com/order/${email}`, {
           method: 'GET',
           headers: {
             authorization: `bearer ${localStorage.getItem('accessToken')}`,

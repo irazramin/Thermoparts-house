@@ -4,7 +4,7 @@ const MakeAdminRow = ({user,idx,refetch}) => {
     const {_id,email,role} = user;
 
     const handleMakeAdmin = () =>{
-        fetch(`http://localhost:5000/admin/users/makeadmin/${_id}`, {
+        fetch(`https://thermopartshouse.herokuapp.com/admin/users/makeadmin/${_id}`, {
           method: 'PUT',
           headers: {
             'content-type': 'application/json',

@@ -20,7 +20,7 @@ const AddProduct = () => {
       desc
     }
 
-    fetch(`http://localhost:5000/tools`, {
+    fetch(`https://thermopartshouse.herokuapp.com/tools`, {
       method: 'POST',
       headers: {
       'content-type':'application/json'
@@ -36,7 +36,7 @@ const AddProduct = () => {
       });
   };
   return (
-    <div className='w-[70%] mx-auto my-10'>
+    <div className='lg:w-[70%] md:w-[80%] w-[90%] mx-auto my-10'>
       <div className=' justify-center'>
         <div className='block p-6 rounded-lg shadow-lg bg-white '>
           <h5 className='text-gray-900 text-xl leading-tight font-medium mb-2'>

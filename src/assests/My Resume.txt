@@ -1,0 +1,53 @@
+Iraz Ramin Bayejid 
+Tangail, Dhaka, Bangladesh 
+01728257929
+irazramin@gmail.com
+
+CAREER OBJECTIVES
+I'm a front-end developer who works with HTML, CSS, UI libraries ( Bootstrap5, TailwindCSS), Javascript, ReactJS, NodeJS, MongoDB, and ExpressJS with dedication and hardworking seeking good opportunities to prove my skills, looking for a responsible position to gain practical experience.
+
+EDUCATION
+Primeasia University                   Computer Science & Engineering 
+05/2023
+Dhaka
+
+SKILLS
+Frontend: JavaScript, ReactJS, ES6, Bootstrap, HTML5, CSS3, SCSS, TailwindCSS.
+Backend: NodeJS, ExpressJS, MongoDB.
+Tools: GitHub, VS Code, Chrome Dev Tools, Heroku, Netlify, Firebase, Figma, Photoshop, Illustrator, Android Studio.
+
+PROJECTS
+Perfumes Hut                   04/2022 - Present
+Dhaka 
+This is a MERN STACK project. This is a warehouse-related website, where users can see the product with their price and product stock. Users can add their own products.
+Technologies: Node.js,React.Js,MongoDB,React router,Tailwind,Firebase
+Features:
+User authentication
+CRUD operation
+Tabular Format data
+Preview: Perfumes Hut
+Source Code:  Frontend | Backend
+Weddography                   04/2022 - Present
+Dhaka 
+This project is focused on ReactJs and Firebase Authentication. Project summary, A professional photographer who gives service to people. People can purchase different packages from the website.
+Technologies: React.Js, Firebase authentication, TailwindCss, React router, Flowbite.
+Features: 
+Users can signin/signup with the firebase authentication system
+When users choose any services, take a different route.
+Preview: Weddography
+Source code: Github
+Watch reviews & analytics                   03/2022 - Present
+Dhaka 
+This is a simple review and analytics-based react website, there are 4 types of charts in the dashboard.
+Technologies: React.Js, React router, Recharts, React rating
+Preview: Watch reviews & analytics
+Source code: Github
+
+LANGUAGES
+Bengali (Natitive)
+English (Fluent)
+Hindi (Coversational)
+
+LINKS
+LinkedIn: https://www.linkedin.com/in/irazraminb/ 
+Github: https://github.com/irazramin

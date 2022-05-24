@@ -9,7 +9,7 @@ const MyProfile = () => {
   const [userProfiles,setUserProfiles] = useState({})
 
   useEffect(() =>{
-     fetch(`http://localhost:5000/userprofile/${email}`)
+     fetch(`https://thermopartshouse.herokuapp.com/userprofile/${email}`)
      .then((res) => res.json())
      .then(data =>{
        setUserProfiles(data)
@@ -38,7 +38,7 @@ const MyProfile = () => {
       github,
     };
 
-    fetch(`http://localhost:5000/userprofile/${user?.email}`, {
+    fetch(`https://thermopartshouse.herokuapp.com/userprofile/${user?.email}`, {
       method: 'PUT',
       headers: {
         'content-type': 'application/json',

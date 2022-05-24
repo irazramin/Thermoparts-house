@@ -11,7 +11,7 @@ const CheckoutForm = ({ order }) => {
   const { totalAmount, partsName, email } = order;
 
   useEffect(() => {
-    fetch(`http://localhost:5000/create-payment-intent`, {
+    fetch(`https://thermopartshouse.herokuapp.com/create-payment-intent`, {
       method: 'POST',
       headers: {
         'Content-type': 'application/json',
@@ -70,7 +70,7 @@ const CheckoutForm = ({ order }) => {
         transactionId: transactionId,
         paid: true,
       };
-      fetch(`http://localhost:5000/order/payment/${order._id}`, {
+      fetch(`https://thermopartshouse.herokuapp.com/order/payment/${order._id}`, {
         method: 'PATCH',
         headers: {
           'Content-type': 'application/json',

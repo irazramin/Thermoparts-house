@@ -10,7 +10,7 @@ const MakeAdmin = () => {
     isLoading,
     refetch,
   } = useQuery('adminUser', () =>
-    fetch(`http://localhost:5000/admin/users/details`, {
+    fetch(`https://thermopartshouse.herokuapp.com/admin/users/details`, {
       method: 'GET',
       headers: {
         authorization: `bearer ${localStorage.getItem('accessToken')}`,
@@ -22,25 +22,32 @@ const MakeAdmin = () => {
     return <Loading></Loading>;
   }
   return (
-     <div className='mt-10 w-[90%] mx-auto'>
-       
-          <table className='table w-full'>
-            <thead>
-              <tr className='text-center'>
-                <th></th>
-                <th>ID</th>
-                <th>Email</th>
-                <th>role</th>
-                <th>Action</th>
-               
-              </tr>
-            </thead>
-            <tbody>
-              {users.map((user,idx) => <MakeAdminRow key={user._id} user={user} idx={idx} refetch={refetch} />)}
-            </tbody>
-          </table>
-        </div>
-  )
+    <div className='mt-10 w-[90%] mx-auto'>
+      <div className='overflow-x-auto'>
+        <table className='table w-full'>
+          <thead>
+            <tr className='text-center'>
+              <th></th>
+              <th>ID</th>
+              <th>Email</th>
+              <th>role</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            {users.map((user, idx) => (
+              <MakeAdminRow
+                key={user._id}
+                user={user}
+                idx={idx}
+                refetch={refetch}
+              />
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  );
 }
 
 export default MakeAdmin

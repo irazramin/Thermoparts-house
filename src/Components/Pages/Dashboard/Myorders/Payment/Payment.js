@@ -16,7 +16,7 @@ const Payment = () => {
     isLoading,
     refetch,
   } = useQuery(['order', id], () =>
-    fetch(`http://localhost:5000/order/payment/${id}`, {
+    fetch(`https://thermopartshouse.herokuapp.com/order/payment/${id}`, {
       method: 'GET',
       headers: {
         authorization: `bearer ${localStorage.getItem('accessToken')}`,

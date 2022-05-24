@@ -7,13 +7,13 @@ import ManageProductRow from './ManageProductRow';
 const ManageProducts = () => {
  const [productId, setProductId] = useState('');
  const [isModalOpen, setIsModalOpen] = useState(false);
- const url = `http://localhost:5000/admin/product/allproduct/`;
+ const url = `https://thermopartshouse.herokuapp.com/admin/product/allproduct/`;
     const {
       data: product,
       isLoading,
       refetch,
     } = useQuery('products', () =>
-      fetch(`http://localhost:5000/admin/tools/allproducts`, {
+      fetch(`https://thermopartshouse.herokuapp.com/admin/tools/allproducts`, {
         method: 'GET',
         headers: {
           authorization: `bearer ${localStorage.getItem('accessToken')}`,

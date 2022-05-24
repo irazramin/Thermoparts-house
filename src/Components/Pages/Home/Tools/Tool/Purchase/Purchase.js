@@ -18,7 +18,7 @@ const Purchase = () => {
 
   useEffect(() => {
     setIsLoading(true);
-    fetch(`http://localhost:5000/tools/${id}`, {
+    fetch(`https://thermopartshouse.herokuapp.com/tools/${id}`, {
       method: 'GET',
       headers: {
         authorization: `bearer ${localStorage.getItem('accessToken')}`,

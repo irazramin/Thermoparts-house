@@ -19,7 +19,7 @@ const Modal = ({ user, tool, inputQuantity, isModalOpen, setIsModalOpen }) => {
       paid: false,
     };
 
-    fetch(`http://localhost:5000/order`, {
+    fetch(`https://thermopartshouse.herokuapp.com/order`, {
       method: 'POST',
       headers: {
         'Content-type': 'application/json',
@@ -31,7 +31,7 @@ const Modal = ({ user, tool, inputQuantity, isModalOpen, setIsModalOpen }) => {
         if (data.result.acknowledged) {
           toast.success('Purchase successfully');
           const available = tool.available - parseInt(inputQuantity);
-          fetch(`http://localhost:5000/tools/${tool._id}`, {
+          fetch(`https://thermopartshouse.herokuapp.com/tools/${tool._id}`, {
             method: 'PATCH',
             headers:{
               "Content-type" :"application/json",

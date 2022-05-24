@@ -8,7 +8,7 @@ const Tools = () => {
 
   useEffect(() => {
     setIsLoading(true)
-    fetch(`http://localhost:5000/tools`)
+    fetch(`https://thermopartshouse.herokuapp.com/tools`)
       .then((res) => res.json())
       .then((data) => {
         setTools(data);
