@@ -8,7 +8,7 @@ import Signup from './Components/Pages/Authentication/Signup';
 import Blogs from './Components/Pages/Blogs/Blogs';
 import AddAReview from './Components/Pages/Dashboard/AddAReview';
 import AddProduct from './Components/Pages/Dashboard/Admin/AddProduct';
-import MakeAdmin from './Components/Pages/Dashboard/Admin/MakeAdmin';
+import MakeAdmin from './Components/Pages/Dashboard/Admin/MakeAdmin/MakeAdmin';
 import ManageAllOrders from './Components/Pages/Dashboard/Admin/ManageAllOrders';
 import ManageProducts from './Components/Pages/Dashboard/Admin/ManageProducts';
 import Dashboard from './Components/Pages/Dashboard/Dashboard';
