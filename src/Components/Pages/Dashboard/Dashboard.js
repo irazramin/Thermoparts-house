@@ -1,8 +1,9 @@
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { Link, Outlet } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
 import auth from '../../../Firebase.init';
 import useAdmin from '../../hooks/useAdmin';
+import DashboardCustomLink from '../../Shared/DashboardCustomLink';
 
 const Dashboard = () => {
   const [user] = useAuthState(auth);
@@ -31,32 +32,32 @@ const Dashboard = () => {
           <label htmlFor='my-drawer-2' className='drawer-overlay'></label>
           <ul className='menu p-4  w-60 text-white bg-primary'>
             {/* <!-- Sidebar content here --> */}
-            <li>
-              <Link to='/dashboard'>My Profile</Link>
+            <li className='my-0'>
+              <DashboardCustomLink className='px-3 py-1 w-full rounded' to='/dashboard'>My Profile</DashboardCustomLink>
             </li>
             {user && !isAdmin && (
               <>
-                <li>
-                  <Link to='myorder'>My Order</Link>
+                <li className='my-0'>
+                  <DashboardCustomLink className='px-3 py-1 w-full rounded' to='myorder'>My Order</DashboardCustomLink>
                 </li>
-                <li>
-                  <Link to='addreview'>Add a review</Link>
+                <li className='my-0'>
+                  <DashboardCustomLink className='px-3 py-1 w-full rounded' to='addreview'>Add a review</DashboardCustomLink>
                 </li>
               </>
             )}
             {isAdmin && (
               <>
-                <li>
-                  <Link to='manageallorders'>Manage All Orders</Link>
+                <li className='my-0'>
+                  <DashboardCustomLink className='px-3 py-1 w-full rounded' to='manageallorders'>Manage All Orders</DashboardCustomLink>
                 </li>
-                <li>
-                  <Link to='addproduct'>Add A Product</Link>
+                <li className='my-0'>
+                  <DashboardCustomLink className='px-3 py-1 w-full rounded' to='addproduct'>Add A Product</DashboardCustomLink>
                 </li>
-                <li>
-                  <Link to='makeadmin'>Make Admin</Link>
+                <li className='my-0'>
+                  <DashboardCustomLink className='px-3 py-1 w-full rounded' to='makeadmin'>Make Admin</DashboardCustomLink>
                 </li>
-                <li>
-                  <Link to='manageproducts'>Manage Products</Link>
+                <li className='my-0'>
+                  <DashboardCustomLink className='px-3 py-1 w-full rounded' to='manageproducts'>Manage Products</DashboardCustomLink>
                 </li>
               </>
             )}

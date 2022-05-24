@@ -58,6 +58,7 @@ const ManageAllOrders = () => {
                     idx={idx}
                     setProductId={setProductId}
                     setIsModalOpen={setIsModalOpen}
+                    refetch={refetch}
                   />
                 ))}
               </tbody>

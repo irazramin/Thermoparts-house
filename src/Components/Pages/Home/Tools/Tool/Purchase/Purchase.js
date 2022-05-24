@@ -138,7 +138,7 @@ const Purchase = () => {
 
           <div className='text-right'>
             <button
-              disabled={inputQuantity < tool.moq}
+              disabled={inputQuantity < tool.moq || inputQuantity > tool.available}
               onClick={() => setIsModalOpen(true)}
               className='relative bottom-0 ml-auto btn btn-outline  text-white  mt-10 -mr-7 modal-button'
             >

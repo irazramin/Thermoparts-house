@@ -22,7 +22,7 @@ import ErrorPage from './Components/Shared/ErrorPage';
 import Header from './Components/Shared/Header';
 function App() {
   return (
-    <div>
+    <div className='bg-slate-50'>
       <Header />
       <div className=''>
         <Routes>

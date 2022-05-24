@@ -1,7 +1,7 @@
 import React from 'react';
 import { toast } from 'react-toastify';
 
-const AllOrdersRow = ({ order, idx, setIsModalOpen, setProductId }) => {
+const AllOrdersRow = ({ order, idx, setIsModalOpen, setProductId,refetch }) => {
   const { partsName, name, paid, quantity, totalAmount, transactionId, _id,shipment } =
     order;
 
@@ -19,8 +19,9 @@ const AllOrdersRow = ({ order, idx, setIsModalOpen, setProductId }) => {
      })
      .then(res => res.json())
      .then(data =>{
-       if(data.acknowledge){
+       if(data.acknowledged){
          toast.success('Order shipped');
+         refetch()
        }
      })
    }
@@ -38,15 +39,25 @@ const AllOrdersRow = ({ order, idx, setIsModalOpen, setProductId }) => {
           <>
             {shipment ? (
               <>
-              <h2 className='text-base font-medium italic text-green-500'>Shipped</h2>
+                <h2 className='text-base font-medium italic text-green-500'>
+                  Shipped
+                </h2>
               </>
             ) : (
-              <button
-                onClick={() => handleShipment(_id)}
-                className='btn btn-sm btn-primary text-white'
-              >
-                Pending
-              </button>
+              <>
+                <div className='flex justify-between items-center'>
+                  <h2 className='text-base font-medium italic  mx-1 text-red-500'>
+                    Pending
+                  </h2>
+
+                  <button
+                    onClick={() => handleShipment(_id)}
+                    className='btn btn-sm btn-primary mx-1 text-white'
+                  >
+                    Shipped
+                  </button>
+                </div>
+              </>
             )}
           </>
         ) : (
@@ -57,13 +68,15 @@ const AllOrdersRow = ({ order, idx, setIsModalOpen, setProductId }) => {
         <>
           {paid ? (
             <>
-              <label className='badge badge-lg badge-secondary'>Paid</label>
+              <label className='text-base font-bold italic  mx-1 text-red-500'>
+                Paid
+              </label>
             </>
           ) : (
             <>
               <label
                 onClick={() => console.log(_id)}
-                className='badge badge-lg badge-accent mx-1'
+                className='badge badge-lg badge-success mx-1'
               >
                 Unpaid
               </label>

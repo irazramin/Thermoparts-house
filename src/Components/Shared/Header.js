@@ -3,29 +3,38 @@ import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
 import auth from "../../Firebase.init";
+import CustomLink from './CustomLink';
 const Header = () => {
   const [user] = useAuthState(auth);
 
      const navItems = (
        <>
          <li>
-           <Link to='/'>Home</Link>
+           <CustomLink className='px-3 py-1 border-b-[2px] rounded-md'  to='/'>
+             Home
+           </CustomLink>
          </li>
          <li tabIndex='0'>
-           <Link to='/blogs'>Blogs</Link>
+           <CustomLink className='px-3 py-1 border-b-[2px] rounded-md'  to='/blogs'>
+             Blogs
+           </CustomLink>
          </li>
          <li tabIndex='0'>
-           <Link to='/myportfolio'>My Portfolio</Link>
+           <CustomLink className='px-3 py-1 border-b-[2px] rounded-md'  to='/myportfolio'>
+             My Portfolio
+           </CustomLink>
          </li>
          {user && (
            <li>
-             <Link to='/dashboard'>Dashboard</Link>
+             <CustomLink className='px-3 py-1 border-b-[2px] rounded-md'  to='/dashboard'>
+               Dashboard
+             </CustomLink>
            </li>
          )}
          {user ? (
            <li>
              <button
-               className='btn btn-outline btn-sm text-primary mx-1 hover:bg-primary my-1 lg:my-0'
+               className=' '
                onClick={() => {
                  signOut(auth);
                  localStorage.removeItem('accessToken');
@@ -39,7 +48,7 @@ const Header = () => {
              <div>
                <Link
                  to='/login'
-                 className='btn btn-primary btn-sm text-white mx-1 my-1 lg:my-0'
+                 className='btn btn-primary btn-sm text-white mx-1 my-1 lg:my-0 '
                >
                  Login
                </Link>
@@ -47,7 +56,7 @@ const Header = () => {
              <div>
                <Link
                  to='/signup'
-                 className='btn btn-outline btn-sm text-primary mx-1 hover:bg-primary my-1 lg:my-0'
+                 className='btn btn-outline btn-sm text-primary mx-1 hover:bg-primary my-1 lg:my-0 '
                >
                  Signup
                </Link>
@@ -84,7 +93,7 @@ const Header = () => {
               {navItems}
             </ul>
           </div>
-          <a className='btn btn-ghost normal-case text-xl'>daisyUI</a>
+          <a className='btn btn-ghost normal-case text-xl'>Thermoparts House</a>
         </div>
         <div className='navbar-center hidden lg:flex navbar-end'>
           <ul className='menu menu-horizontal p-0 flex justify-center items-center'>
