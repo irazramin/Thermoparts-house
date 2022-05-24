@@ -67,7 +67,7 @@ const AddAReview = () => {
                         w-full
                         rounded-md
                         border
-                        bordder-[#E9EDF4]
+                        border-gray-300
                         py-[6px]
                         px-5
                         bg-[#FssCFDFE]
@@ -87,7 +87,7 @@ const AddAReview = () => {
                         w-full
                         rounded-md
                         border
-                        bordder-[#E9EDF4]
+                        border-gray-300
                         py-[6px]
                         px-5
                         bg-[#FssCFDFE]
@@ -101,7 +101,7 @@ const AddAReview = () => {
             />
 
             <textarea
-              className='w-full rounded-md border bordder-[#E9EDF4] py-[6px] px-5 bg-[#FssCFDFE] text-base text-body-color placeholder-[#ACB6BE] outline-none focus-visible:shadow-none focus:border-primary mb-5'
+              className='w-full rounded-md border border-gray-300 py-[6px] px-5 bg-[#FssCFDFE] text-base text-body-color placeholder-[#ACB6BE] outline-none focus-visible:shadow-none focus:border-primary mb-5'
               name='comment'
               id=''
               cols='20'
