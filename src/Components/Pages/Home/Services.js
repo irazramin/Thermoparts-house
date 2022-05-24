@@ -35,8 +35,7 @@ const Services = () => {
             <img
               src={pipe}
               alt='Shoes'
-              className='w-[80px] text-white'
-              className='rounded-xl'
+              className='w-[80px] text-white rounded-xl'
             />
           </figure>
           <div className='card-body items-center text-center'>
@@ -55,8 +54,7 @@ const Services = () => {
             <img
               src={circuit}
               alt='Shoes'
-              className='w-[80px] text-white'
-              className='rounded-xl'
+              className='w-[80px] text-white rounded-xl'
             />
           </figure>
           <div className='card-body items-center text-center'>
