@@ -2,6 +2,7 @@ import React from 'react';
 import facebook from "../../../assests/facebook.png";
 import github from "../../../assests/github.png";
 import linkedin from "../../../assests/linkedin.png";
+import pic from "../../../assests/my_pic.jpg";
 import Footer from '../../Shared/Footer';
 const MyPortfolio = () => {
   return (
@@ -110,12 +111,12 @@ const MyPortfolio = () => {
             <div className='flex justify-center items-center'>
               <div class='avatar'>
                 <div class='w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2'>
-                  <img src='https://api.lorem.space/image/face?hash=3174' />
+                  <img src={pic} />
                 </div>
               </div>
             </div>
             <div className='text-center mt-5'>
-              <p className='text-gray-900 text-lg'>Iraz Ramin Bayejid</p>
+              <p className='text-gray-900 text-lg font-bold'>Iraz Ramin Bayejid</p>
               <span className='text-gray-900 text-base'>
                 Frontend Developer
               </span>
@@ -131,7 +132,7 @@ const MyPortfolio = () => {
             </div>
             <div className='mt-5'>
               <span className='text-sm text-gray-500'>Home Address </span>
-              <p className='text-gray-900'>Road No: 20, Nikunja-2, , Dhaka </p>
+              <p className='text-gray-900'>Road No: 20, Nikunja-2, Dhaka </p>
             </div>
             <div className='mt-5'>
               <span className='text-sm text-gray-500'>Education </span>

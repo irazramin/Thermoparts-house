@@ -1,54 +1,66 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   useAuthState,
+  useSendPasswordResetEmail,
   useSignInWithEmailAndPassword,
   useSignInWithGoogle
 } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
 import { useLocation, useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import auth from '../../../Firebase.init';
 import useToken from '../../hooks/useToken';
 import Loading from '../../Shared/Loading';
 
-
 const Login = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const [signInWithGoogle, user2, loading2, error2] = useSignInWithGoogle(auth);
+    const [sendPasswordResetEmail, sending, error3] =
+      useSendPasswordResetEmail(auth);
   const {
     register,
     formState: { errors },
     handleSubmit,
   } = useForm();
   const [signInWithEmailAndPassword, user, loading, error] =
-  useSignInWithEmailAndPassword(auth);
-  
-  
+    useSignInWithEmailAndPassword(auth);
+
   const navigate = useNavigate();
   const location = useLocation();
-  
-   const [currentUser] = useAuthState(auth);
-   const [token] = useToken(user || user2 || currentUser);
-   const from = location.state?.from?.pathname || '/';  console.log(token)
-   console.log(user)
-  if(token){
-      navigate(from,{replace:true});
+
+  const [currentUser] = useAuthState(auth);
+  const [token] = useToken(user || user2 || currentUser);
+  const from = location.state?.from?.pathname || '/';
+  console.log(token);
+  console.log(user);
+  if (token) {
+    navigate(from, { replace: true });
   }
-  if(loading || loading2){
-      return <Loading />
+  if (loading || loading2) {
+    return <Loading />;
   }
 
-//   if(error || error2){
-//       setFirebaseErrors(error?.message || error2?.message);
-//   }
+  //   if(error || error2){
+  //       setFirebaseErrors(error?.message || error2?.message);
+  //   }
 
-   const onSubmit = (data) => {
-     signInWithEmailAndPassword(data.email, data.password);
-   };
-
+  const onSubmit = (data) => {
+    signInWithEmailAndPassword(data.email, data.password);
+  };
 
   const handleGoogleLogin = () => {
     signInWithGoogle();
   };
 
+  const handleResetPassword = (e) => {
+    e.preventDefault();
+    const email = e.target.resetInput.value;
+    sendPasswordResetEmail(email);
+    if(!error3){
+      toast.success('Reset password send to your email. please check');
+    }
+    setIsModalOpen(false)
+  };
   return (
     <div className=''>
       <section className='bg-[#F4F7FF] py-20 lg:py-[120px] mx-auto w-full flex items-center justify-center'>
@@ -84,7 +96,7 @@ const Login = () => {
                 <form onSubmit={handleSubmit(onSubmit)}>
                   <div className='mb-6'>
                     <input
-                      type='text'
+                      type='email'
                       placeholder='Email'
                       className='
                         w-full
@@ -182,7 +194,9 @@ const Login = () => {
                     />
                   </div>
 
-                  <p className='mt-5 text-warning'>{(error || error2)  ? (error?.message || error2?.message) : ''}</p>
+                  <p className='mt-5 text-warning'>
+                    {error || error2 || error3 ? error?.message || error2?.message : ''}
+                  </p>
                 </form>
                 <p className='text-base mb-6 text-[#adadad]'>Connect With</p>
                 <ul className='flex justify-center items-center -mx-2 mb-6'>
@@ -215,6 +229,8 @@ const Login = () => {
                   </li>
                 </ul>
                 <a
+                  type='button'
+                  onClick={() => setIsModalOpen(true)}
                   href='javascript:void(0)'
                   className='
                   text-base
@@ -458,6 +474,78 @@ const Login = () => {
           </div>
         </div>
       </section>
+
+      <div className=' h-screen'>
+        <div
+          id='authentication-modal'
+          tabindex='-1'
+          aria-hidden='true'
+          class={`${
+            isModalOpen ? 'block' : 'hidden'
+          } overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 w-full md:inset-0 h-modal md:h-full justify-center items-center flex justify-center items-center`}
+        >
+          <div class='relative p-4 w-full max-w-md h-full md:h-auto'>
+            <div class='relative bg-white rounded-lg shadow-lg '>
+              <button
+              onClick={() => setIsModalOpen(false)}
+                type='button'
+                class='absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-800 dark:hover:text-white'
+                data-modal-toggle='authentication-modal'
+              >
+                <svg
+                  class='w-5 h-5'
+                  fill='currentColor'
+                  viewBox='0 0 20 20'
+                  xmlns='http://www.w3.org/2000/svg'
+                >
+                  <path
+                    fill-rule='evenodd'
+                    d='M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z'
+                    clip-rule='evenodd'
+                  ></path>
+                </svg>
+              </button>
+              <div class='py-6 px-6 lg:px-8'>
+                <h3 class='mb-4 text-xl font-medium text-gray-900'>
+                  Reset your password
+                </h3>
+                <form class='space-y-6' action='#' onSubmit={handleResetPassword}>
+                  <div className='mb-6'>
+                    <input
+                      name='resetInput'
+                      type='email'
+                      placeholder='Email'
+                      required
+                      className='
+                        w-full
+                        rounded-md
+                        border
+                        bordder-[#E9EDF4]
+                        py-3
+                        px-5
+                        bg-[#FCFDFE]
+                        text-base text-body-color
+                        placeholder-[#ACB6BE]
+                        outline-none
+                        focus-visible:shadow-none
+                        focus:border-primary
+                        '
+              
+                    />
+                 
+                  </div>
+                  <button
+                    type='submit'
+                    class='w-full text-white bg-primary hover:bg-primary focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary dark:hover:bg-primary'
+                  >
+                    Reset
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
