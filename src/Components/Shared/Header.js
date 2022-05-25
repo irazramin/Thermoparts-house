@@ -102,7 +102,9 @@ const Header = () => {
               {navItems}
             </ul>
           </div>
-          <a className='btn btn-ghost normal-case text-xl'>Thermoparts House</a>
+          <Link to='/' className='text-xl font-bold active:scale-105'>
+              ThermopartHouse
+          </Link>
         </div>
         <div className='navbar-center hidden lg:flex navbar-end'>
           <ul className='menu menu-horizontal p-0 flex justify-center items-center'>

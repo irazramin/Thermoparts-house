@@ -137,6 +137,24 @@ const MyPortfolio = () => {
                   </p>
                 </div>
               </div>
+
+              <div className='mt-10 text-gray-900'>
+                <p className='text-lg font-bold text-gray-900'>SKILLS</p>
+                <div className='mt-3'>
+                  <p className='mt-1'>
+                    <strong>Frontend:</strong> JavaScript, ReactJS, ES6,
+                    Bootstrap, HTML5, CSS3, SCSS, TailwindCSS{' '}
+                  </p>
+                  <p className='mt-1'>
+                    <strong>Backend:</strong> NodeJS, ExpressJS, MongoDB.{' '}
+                  </p>
+                  <p className='mt-1'>
+                    <strong>Tools:</strong> GitHub, VS Code, Chrome Dev Tools,
+                    Heroku, Netlify, Firebase, Figma, Photoshop, Illustrator,
+                    Android Studio.{' '}
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
           <div className='lg:col-span-2  w-full'>

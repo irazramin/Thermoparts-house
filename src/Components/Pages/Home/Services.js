@@ -48,7 +48,7 @@ const Services = () => {
             </a>
             <div className='p-6'>
               <h5 className='text-gray-900 text-xl font-medium mb-2'>
-                Build best parts
+                Build Best Parts
               </h5>
               <p className='text-gray-700 text-base mb-4'>
                 We build machines that set the industry standard for precision
@@ -74,11 +74,10 @@ const Services = () => {
             </a>
             <div className='p-6'>
               <h5 className='text-gray-900 text-xl font-medium mb-2'>
-                Build best parts
+                With Best Technologies
               </h5>
               <p className='text-gray-700 text-base mb-4'>
-                We build machines that set the industry standard for precision
-                and durability
+                We build our products with best technologies 
               </p>
               <button
                 type='button'

@@ -14,7 +14,7 @@ const Dashboard = () => {
     <div>
       <div className='drawer drawer-mobile w-full'>
         <input id='my-drawer-2' type='checkbox' className='drawer-toggle' />
-        <div className='drawer-content  items-center mt-8 w-[85%] mx-auto'>
+        <div className='drawer-content  items-center mt-8 container lg:px-10 md:px-6 px-3 mx-auto'>
           <h2 className='text-3xl font-semibold text-gray-900'>
             Hello <span className='text-accent'>{user?.displayName}</span>,
             Welcome to dashboard

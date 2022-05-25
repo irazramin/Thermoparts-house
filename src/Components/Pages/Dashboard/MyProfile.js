@@ -7,12 +7,26 @@ const MyProfile = () => {
   const [user] = useAuthState(auth);
   const email = user?.email;
   const [userProfiles,setUserProfiles] = useState({})
+  const [fNames,setFNames] = useState('')
+  const [lNames,setlNames] = useState('')
+  const [locations,setLocations] = useState('')
+  const [education,setEducation] = useState('')
+  const [linkedIn,setLinkedIn] = useState('')
+  const [phone,setPhone] = useState('')
+  const [github,setGithub] = useState('')
 
   useEffect(() =>{
      fetch(`https://thermopartshouse.herokuapp.com/userprofile/${email}`)
      .then((res) => res.json())
      .then(data =>{
        setUserProfiles(data)
+       setFNames(data.firstName)
+       setlNames(data.lastName)
+       setEducation(data.education)
+       setPhone(data.phone)
+       setLinkedIn(data.linkedin);
+       setGithub(data.github)
+       setLocations(data.location)
      })
   },[email])
 
@@ -61,7 +75,7 @@ const MyProfile = () => {
   return (
     <div className='my-20 overflow-hidden'>
       <div className='grid grid-cols-1 lg:grid-cols-6 gap-2'>
-        <div className='col-span-2 w-96 max-w-lg'>
+        <div className='lg:col-span-2 lg:w-96 lg:max-w-lg'>
           <div className='flex justify-center'>
             <div className='rounded-lg shadow-lg bg-white w-full mx-5'>
               <a href='#!'>
@@ -126,7 +140,7 @@ const MyProfile = () => {
             </div>
           </div>
         </div>
-        <div className='col-span-4'>
+        <div className='lg:col-span-4 mt-5'>
           <div className='flex justify-center'>
             <div className='flex flex-col md:flex-row mx-4 w-full rounded bg-white shadow-lg'>
               <div className='p-6 flex flex-col justify-start'>
@@ -134,12 +148,14 @@ const MyProfile = () => {
                   Edit Profile
                 </h5>
                 <form onSubmit={handleUpdateProfile}>
-                  <div className='grid grid-cols-2 lg:gap-10 gap-3'>
+                  <div className='grid grid-cols-1 md:grid-cols-2 lg:gap-10 gap-3'>
                     <div>
                       <input
                         type='text'
                         placeholder='First Name'
                         name='fname'
+                        value={fNames}
+                        onChange={(e) => setFNames(e.target.value)}
                         className='
                         w-full
                         rounded-md
@@ -155,6 +171,7 @@ const MyProfile = () => {
                         focus:border-primary
                         lg:mb-10
                         mb-5
+                        text-gray-900
                         '
                         required
                       />
@@ -179,6 +196,7 @@ const MyProfile = () => {
                         focus:border-primary
                         lg:mb-10
                         mb-5
+                        text-gray-900
                         '
                         required
                       />
@@ -186,6 +204,8 @@ const MyProfile = () => {
                         type='text'
                         placeholder='Location'
                         name='location'
+                        value={locations}
+                        onChange={(e) => setLocations(e.target.value)}
                         className='
                         w-full
                         rounded-md
@@ -201,12 +221,15 @@ const MyProfile = () => {
                         focus:border-primary
                         lg:mb-10
                         mb-5
+                        text-gray-900
                         '
                         required
                       />
                       <input
                         type='text'
                         placeholder='LinkedIn'
+                        value={linkedIn}
+                        onChange={(e) => setLinkedIn(e.target.value)}
                         name='linkedin'
                         className='
                         w-full
@@ -223,6 +246,7 @@ const MyProfile = () => {
                         focus:border-primary
                         lg:mb-10
                         mb-5
+                        text-gray-900
                         '
                         required
                       />
@@ -232,6 +256,8 @@ const MyProfile = () => {
                         type='text'
                         placeholder='Last Name'
                         name='lname'
+                        value={lNames}
+                        onChange={(e) => setlNames(e.target.value)}
                         className='
                         w-full
                         rounded-md
@@ -247,12 +273,15 @@ const MyProfile = () => {
                         focus:border-primary
                         lg:mb-10
                         mb-5
+                        text-gray-900
                         '
                         required
                       />
                       <input
                         type='number'
                         placeholder='Number'
+                        value={phone}
+                        onChange={(e) => setPhone(e.target.value)}
                         name='number'
                         className='
                         w-full
@@ -269,12 +298,15 @@ const MyProfile = () => {
                         focus:border-primary
                         lg:mb-10
                         mb-5
+                        text-gray-900
                         '
                         required
                       />
                       <input
                         type='text'
                         placeholder='Education'
+                        value={education}
+                        onChange={(e) => setEducation(e.target.value)}
                         name='education'
                         className='
                         w-full
@@ -291,12 +323,15 @@ const MyProfile = () => {
                         focus:border-primary
                         lg:mb-10
                         mb-5
+                        text-gray-900
                         '
                         required
                       />
                       <input
                         type='text'
                         placeholder='Github'
+                        value={github}
+                        onChange={(e) => setGithub(e.target.value)}
                         name='github'
                         className='
                         w-full
@@ -313,14 +348,17 @@ const MyProfile = () => {
                         focus:border-primary
                         lg:mb-10
                         mb-5
+                        text-gray-900
                         '
                         required
                       />
                     </div>
                   </div>
-                  <button className='inline-block px-6 py-2.5 bg-primary text-white font-medium text-xs leading-tight uppercase rounded shadow-md  hover:shadow-lg  focus:shadow-lg focus:outline-none focus:ring-0  active:shadow-lg transition duration-150 ease-in-out'>
-                    Update Profile
-                  </button>
+                  <div className=' text-right'>
+                    <button className='inline-block px-6 py-2.5 bg-primary text-white font-medium text-xs leading-tight uppercase rounded shadow-md  hover:shadow-lg  focus:shadow-lg focus:outline-none focus:ring-0  active:shadow-lg transition duration-150 ease-in-out'>
+                      Update Profile
+                    </button>
+                  </div>
                 </form>
               </div>
             </div>

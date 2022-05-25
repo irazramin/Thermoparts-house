@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 const ManageProductRow = ({ product,idx,setIsModalOpen,setProductId }) => {
      
@@ -18,7 +18,7 @@ const ManageProductRow = ({ product,idx,setIsModalOpen,setProductId }) => {
       <td>
         <button
           onClick={() => handleDeleteProduct(_id)}
-          className='relative bottom-0 ml-auto modal-button inline-block px-6 py-2 border-[1px] border-white  font-medium text-xs leading-tight uppercase rounded hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out text-white bg-red-500'
+          className='inline-block px-6 py-2.5 bg-red-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-red-700 hover:shadow-lg focus:bg-red-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-red-800 active:shadow-lg transition duration-150 ease-in-out'
         >
           Delete
         </button>

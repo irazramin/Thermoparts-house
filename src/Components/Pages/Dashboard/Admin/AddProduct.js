@@ -48,7 +48,6 @@ const AddProduct = () => {
                 type='text'
                 placeholder='Product name'
                 name='partsName'
-                
                 className='
                         w-full
                         rounded-md
@@ -92,7 +91,6 @@ const AddProduct = () => {
                 type='number'
                 placeholder='Minimum order quantity'
                 name='moq'
-                
                 className='
                         w-full
                         rounded-md
@@ -166,7 +164,7 @@ const AddProduct = () => {
             <div className='text-right'>
               <button
                 type='submit'
-                className=' bg-primary text-white btn-sm btn border-0'
+                className=' inline-block px-6 py-2.5 bg-primary text-white font-medium text-xs leading-tight uppercase rounded shadow-md  hover:shadow-lg  focus:shadow-lg focus:outline-none focus:ring-0  active:shadow-lg transition duration-150 ease-in-out'
               >
                 Add product
               </button>

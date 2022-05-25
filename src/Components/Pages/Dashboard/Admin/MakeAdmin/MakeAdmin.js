@@ -22,7 +22,7 @@ const MakeAdmin = () => {
     return <Loading></Loading>;
   }
   return (
-    <div className='mt-10 w-[90%] mx-auto'>
+    <div className='mt-10  mx-auto'>
       <div className='overflow-x-auto'>
         <table className='table w-full'>
           <thead>
