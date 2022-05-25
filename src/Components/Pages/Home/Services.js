@@ -11,57 +11,81 @@ const Services = () => {
       </h2>
 
       <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mx-auto w-full  place-items-center'>
-        <div className='card w-full h-full max-h-md max-w-sm shadow text-gray-900 hover:bg-primary hover:text-white duration-700 ease hover:scale-110 '>
-          <figure className='px-10 pt-10'>
-            <img
-              src={machine}
-              alt='Shoes'
-              className='w-[80px] text-white rounded-xl'
-            />
-          </figure>
-          <div className='card-body items-center text-center'>
-            <h2 className='card-title'>Automotive And Manufacturing</h2>
-            <p>
-              Professional discipline deals with designing, planning,
-              construction of infrastructures.
-            </p>
-            <div className='card-actions'>
-              <button className='btn btn-primary'>Buy Now</button>
+        <div class='flex justify-center text-center'>
+          <div class='rounded-lg shadow-lg bg-white max-w-sm'>
+            <a href='#!'>
+              <img
+                src={machine}
+                alt='Shoes'
+                className='w-[80px] text-white rounded-xl mx-auto'
+              />
+            </a>
+            <div class='p-6'>
+              <h5 class='text-gray-900 text-xl font-medium mb-2'>
+                Automotive And Manufacturing
+              </h5>
+              <p class='text-gray-700 text-base mb-4'>
+                Professional discipline deals with designing, planning,
+                construction of infrastructures.
+              </p>
+              <button
+                type='button'
+                class='inline-block px-6 py-2.5 bg-primary text-white font-medium text-xs leading-tight uppercase rounded shadow-md  hover:shadow-lg  focus:shadow-lg focus:outline-none focus:ring-0  active:shadow-lg transition duration-150 ease-in-out'
+              >
+                Buy now
+              </button>
             </div>
           </div>
         </div>
-        <div className='card w-full  max-w-sm shadow text-gray-900 hover:bg-primary hover:text-white duration-700 ease hover:scale-110'>
-          <figure className='px-10 pt-10'>
-            <img
-              src={pipe}
-              alt='Shoes'
-              className='w-[80px] text-white rounded-xl'
-            />
-          </figure>
-          <div className='card-body items-center text-center'>
-            <h2 className='card-title'>Build best parts</h2>
-            <p>
-              We build machines that set the industry standard for precision and
-              durability
-            </p>
-            <div className='card-actions'>
-              <button className='btn btn-primary'>Buy Now</button>
+        <div class='flex justify-center text-center'>
+          <div class='rounded-lg shadow-lg bg-white max-w-sm'>
+            <a href='#!'>
+              <img
+                src={pipe}
+                alt='Shoes'
+                className='w-[80px] text-white rounded-xl mx-auto'
+              />
+            </a>
+            <div class='p-6'>
+              <h5 class='text-gray-900 text-xl font-medium mb-2'>
+                Build best parts
+              </h5>
+              <p class='text-gray-700 text-base mb-4'>
+                We build machines that set the industry standard for precision
+                and durability
+              </p>
+              <button
+                type='button'
+                class='inline-block px-6 py-2.5 bg-primary text-white font-medium text-xs leading-tight uppercase rounded shadow-md  hover:shadow-lg  focus:shadow-lg focus:outline-none focus:ring-0  active:shadow-lg transition duration-150 ease-in-out'
+              >
+                Buy now
+              </button>
             </div>
           </div>
         </div>
-        <div className='card w-full  max-w-sm shadow text-gray-900 hover:bg-primary hover:text-white duration-700 ease hover:scale-110'>
-          <figure className='px-10 pt-10'>
-            <img
-              src={circuit}
-              alt='Shoes'
-              className='w-[80px] text-white rounded-xl'
-            />
-          </figure>
-          <div className='card-body items-center text-center'>
-            <h2 className='card-title'>Shoes!</h2>
-            <p>If a dog chews shoes whose shoes does he choose?</p>
-            <div className='card-actions'>
-              <button className='btn btn-primary'>Buy Now</button>
+        <div class='flex justify-center text-center'>
+          <div class='rounded-lg shadow-lg bg-white max-w-sm'>
+            <a href='#!'>
+              <img
+                src={circuit}
+                alt='Shoes'
+                className='w-[80px] text-white rounded-xl mx-auto'
+              />
+            </a>
+            <div class='p-6'>
+              <h5 class='text-gray-900 text-xl font-medium mb-2'>
+                Build best parts
+              </h5>
+              <p class='text-gray-700 text-base mb-4'>
+                We build machines that set the industry standard for precision
+                and durability
+              </p>
+              <button
+                type='button'
+                class='inline-block px-6 py-2.5 bg-primary text-white font-medium text-xs leading-tight uppercase rounded shadow-md  hover:shadow-lg  focus:shadow-lg focus:outline-none focus:ring-0  active:shadow-lg transition duration-150 ease-in-out'
+              >
+                Buy now
+              </button>
             </div>
           </div>
         </div>

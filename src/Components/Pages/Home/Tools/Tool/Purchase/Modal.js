@@ -51,12 +51,14 @@ const Modal = ({ user, tool, inputQuantity, isModalOpen, setIsModalOpen }) => {
         id='authentication-modal'
         tabindex='-1'
         aria-hidden='true'
-        class={`${isModalOpen ? 'block' : 'hidden'} flex  justify-center items-center shadow-2xl overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 w-full md:inset-0 h-modal md:h-full`}
+        class={`${
+          isModalOpen ? 'block' : 'hidden'
+        } flex  justify-center items-center shadow-2xl overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 w-full md:inset-0 h-modal md:h-full`}
       >
         <div class='relative p-4 w-full max-w-md h-full md:h-auto'>
           <div class='relative bg-white text-gray-900 rounded-lg shadow '>
             <button
-            onClick={() => setIsModalOpen(false)}
+              onClick={() => setIsModalOpen(false)}
               type='button'
               class='absolute top-2 right-2 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-800 '
               data-modal-toggle='authentication-modal'
@@ -180,7 +182,7 @@ const Modal = ({ user, tool, inputQuantity, isModalOpen, setIsModalOpen }) => {
                     type='submit'
                     value='Confirm Order'
                     htmlFor='my-modal-3'
-                    className='btn btn-sm btn-primary'
+                    className='inline-block px-6 py-2.5 bg-primary text-white font-medium text-xs leading-tight uppercase rounded shadow-md  hover:shadow-lg  focus:shadow-lg focus:outline-none focus:ring-0  active:shadow-lg transition duration-150 ease-in-out cursor-pointer'
                   />
                 </div>
               </form>

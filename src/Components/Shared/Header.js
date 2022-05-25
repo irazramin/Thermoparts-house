@@ -10,23 +10,32 @@ const Header = () => {
      const navItems = (
        <>
          <li>
-           <CustomLink className='px-3 py-1 border-b-[2px] rounded-md'  to='/'>
+           <CustomLink className='px-3 py-1 border-b-[2px] rounded-md' to='/'>
              Home
            </CustomLink>
          </li>
          <li tabIndex='0'>
-           <CustomLink className='px-3 py-1 border-b-[2px] rounded-md'  to='/blogs'>
+           <CustomLink
+             className='px-3 py-1 border-b-[2px] rounded-md'
+             to='/blogs'
+           >
              Blogs
            </CustomLink>
          </li>
          <li tabIndex='0'>
-           <CustomLink className='px-3 py-1 border-b-[2px] rounded-md'  to='/myportfolio'>
+           <CustomLink
+             className='px-3 py-1 border-b-[2px] rounded-md'
+             to='/myportfolio'
+           >
              My Portfolio
            </CustomLink>
          </li>
          {user && (
            <li>
-             <CustomLink className='px-3 py-1 border-b-[2px] rounded-md'  to='/dashboard'>
+             <CustomLink
+               className='px-3 py-1 border-b-[2px] rounded-md'
+               to='/dashboard'
+             >
                Dashboard
              </CustomLink>
            </li>
@@ -34,7 +43,7 @@ const Header = () => {
          {user ? (
            <li>
              <button
-               className=' '
+               className=' inline-block px-6 py-2.5 bg-primary text-white font-medium text-xs leading-tight uppercase rounded shadow-md  hover:shadow-lg  focus:shadow-lg focus:outline-none focus:ring-0  active:shadow-lg transition duration-150 ease-in-out'
                onClick={() => {
                  signOut(auth);
                  localStorage.removeItem('accessToken');

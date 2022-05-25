@@ -33,34 +33,71 @@ const Dashboard = () => {
           <ul className='menu p-4  w-60 text-white bg-primary'>
             {/* <!-- Sidebar content here --> */}
             <li className='my-0'>
-              <DashboardCustomLink className='px-3 py-1 w-full rounded' to='/dashboard'>My Profile</DashboardCustomLink>
+              <DashboardCustomLink
+                className='px-3 py-1 w-full rounded'
+                to='/dashboard'
+              >
+                My Profile
+              </DashboardCustomLink>
             </li>
-            {user && !isAdmin && (
+            {user && !isAdmin ? (
               <>
                 <li className='my-0'>
-                  <DashboardCustomLink className='px-3 py-1 w-full rounded' to='myorder'>My Order</DashboardCustomLink>
+                  <DashboardCustomLink
+                    className='px-3 py-1 w-full rounded'
+                    to='myorder'
+                  >
+                    My Order
+                  </DashboardCustomLink>
                 </li>
                 <li className='my-0'>
-                  <DashboardCustomLink className='px-3 py-1 w-full rounded' to='addreview'>Add a review</DashboardCustomLink>
+                  <DashboardCustomLink
+                    className='px-3 py-1 w-full rounded'
+                    to='addreview'
+                  >
+                    Add a review
+                  </DashboardCustomLink>
+                </li>
+              </>
+            ) : (
+              <>
+                <li className='my-0'>
+                  <DashboardCustomLink
+                    className='px-3 py-1 w-full rounded'
+                    to='manageallorders'
+                  >
+                    Manage All Orders
+                  </DashboardCustomLink>
+                </li>
+                <li className='my-0'>
+                  <DashboardCustomLink
+                    className='px-3 py-1 w-full rounded'
+                    to='addproduct'
+                  >
+                    Add A Product
+                  </DashboardCustomLink>
+                </li>
+                <li className='my-0'>
+                  <DashboardCustomLink
+                    className='px-3 py-1 w-full rounded'
+                    to='makeadmin'
+                  >
+                    Make Admin
+                  </DashboardCustomLink>
+                </li>
+                <li className='my-0'>
+                  <DashboardCustomLink
+                    className='px-3 py-1 w-full rounded'
+                    to='manageproducts'
+                  >
+                    Manage Products
+                  </DashboardCustomLink>
                 </li>
               </>
             )}
-            {isAdmin && (
-              <>
-                <li className='my-0'>
-                  <DashboardCustomLink className='px-3 py-1 w-full rounded' to='manageallorders'>Manage All Orders</DashboardCustomLink>
-                </li>
-                <li className='my-0'>
-                  <DashboardCustomLink className='px-3 py-1 w-full rounded' to='addproduct'>Add A Product</DashboardCustomLink>
-                </li>
-                <li className='my-0'>
-                  <DashboardCustomLink className='px-3 py-1 w-full rounded' to='makeadmin'>Make Admin</DashboardCustomLink>
-                </li>
-                <li className='my-0'>
-                  <DashboardCustomLink className='px-3 py-1 w-full rounded' to='manageproducts'>Manage Products</DashboardCustomLink>
-                </li>
-              </>
-            )}
+            {/* {isAdmin && (
+     
+            )} */}
           </ul>
         </div>
       </div>

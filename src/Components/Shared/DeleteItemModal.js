@@ -6,16 +6,19 @@ const DeleteItemModal = ({productId,setIsModalOpen,isModalOpen,url,refetch}) => 
     const deleteItemFromDatabase = id =>{
         console.log(id)
         setIsModalOpen(false)
-        fetch(url+productId,{
-            method:"DELETE"
+        fetch(url + productId, {
+          method: 'DELETE',
+          headers: {
+            authorization: `bearer ${localStorage.getItem('accessToken')}`,
+          },
         })
-        .then(res => res.json())
-        .then(data =>{
-            if (data.acknowledged){
-                toast.success('Order cancel',productId);
-                refetch()
+          .then((res) => res.json())
+          .then((data) => {
+            if (data.acknowledged) {
+              toast.success('Order cancel', productId);
+              refetch();
             }
-        })
+          });
     }
 
   return (

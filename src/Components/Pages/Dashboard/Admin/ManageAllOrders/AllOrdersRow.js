@@ -11,19 +11,20 @@ const AllOrdersRow = ({ order, idx, setIsModalOpen, setProductId,refetch }) => {
    };
 
    const handleShipment = (id) =>{
-     fetch(`http://localhost:5000/admin/order/allorder/shipment/${id}`,{
-       method:"PUT",
-       headers:{
-         "content-type":"application/json"
+     fetch(`http://localhost:5000/admin/order/allorder/shipment/${id}`, {
+       method: 'PUT',
+       headers: {
+         'content-type': 'application/json',
+         authorization: `bearer ${localStorage.getItem('accessToken')}`,
        },
      })
-     .then(res => res.json())
-     .then(data =>{
-       if(data.acknowledged){
-         toast.success('Order shipped');
-         refetch()
-       }
-     })
+       .then((res) => res.json())
+       .then((data) => {
+         if (data.acknowledged) {
+           toast.success('Order shipped');
+           refetch();
+         }
+       });
    }
   return (
     <tr className='text-gray-800 text-center'>
@@ -39,8 +40,8 @@ const AllOrdersRow = ({ order, idx, setIsModalOpen, setProductId,refetch }) => {
           <>
             {shipment ? (
               <>
-                <h2 className='text-base font-medium italic text-green-500'>
-                  Shipped
+                <h2 className='text-sm font-medium italic text-green-500'>
+                  shipped
                 </h2>
               </>
             ) : (
@@ -64,32 +65,30 @@ const AllOrdersRow = ({ order, idx, setIsModalOpen, setProductId,refetch }) => {
           'N/A'
         )}
       </td>
-      <td>
+      <td className='text-right'>
         <>
           {paid ? (
             <>
-              <label className='text-base font-bold italic  mx-1 text-red-500'>
+              <span class='text-xs inline-block py-1 px-2.5 leading-none text-center whitespace-nowrap align-baseline font-bold bg-green-600 text-white rounded-full'>
                 Paid
-              </label>
+              </span>
             </>
           ) : (
             <>
-              <label
-                onClick={() => console.log(_id)}
-                className='badge badge-lg badge-success mx-1'
-              >
+              <span class='text-xs inline-block py-1 px-2.5 leading-none text-center whitespace-nowrap align-baseline font-bold bg-yellow-600 text-white rounded-full'>
                 Unpaid
-              </label>
-
-              <button
-                onClick={() => handleCancelOrder(_id)}
-                className='btn btn-sm btn-primary text-white'
-              >
-                Cancel
-              </button>
+              </span>
             </>
           )}
         </>
+      </td>
+      <td className='text-right'>
+        <button
+          onClick={() => handleCancelOrder(_id)}
+          className='inline-block px-6 py-2.5 bg-red-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-red-700 hover:shadow-lg focus:bg-red-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-red-800 active:shadow-lg transition duration-150 ease-in-out'
+        >
+          Cancel
+        </button>
       </td>
     </tr>
   );

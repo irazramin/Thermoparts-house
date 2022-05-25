@@ -22,7 +22,9 @@ const Aboutus = () => {
               emerging trends, market needs and combining them with our
               technical and creative expertise…
             </p>
-            <button className='btn btn-primary btn-sm'>Learn more</button>
+            <button className='inline-block px-6 py-2.5 bg-primary text-white font-medium text-xs leading-tight uppercase rounded shadow-md  hover:shadow-lg  focus:shadow-lg focus:outline-none focus:ring-0  active:shadow-lg transition duration-150 ease-in-out'>
+              Learn more
+            </button>
           </div>
         </div>
       </div>

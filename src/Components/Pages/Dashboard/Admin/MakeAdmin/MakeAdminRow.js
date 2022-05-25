@@ -4,12 +4,16 @@ const MakeAdminRow = ({user,idx,refetch}) => {
     const {_id,email,role} = user;
 
     const handleMakeAdmin = () =>{
-        fetch(`https://thermopartshouse.herokuapp.com/admin/users/makeadmin/${_id}`, {
-          method: 'PUT',
-          headers: {
-            'content-type': 'application/json',
-          },
-        })
+        fetch(
+          `https://thermopartshouse.herokuapp.com/admin/users/makeadmin/${_id}`,
+          {
+            method: 'PUT',
+            headers: {
+              'content-type': 'application/json',
+              authorization: `bearer ${localStorage.getItem('accessToken')}`,
+            },
+          }
+        )
           .then((res) => res.json())
           .then((data) => {
             if (data.acknowledged) {

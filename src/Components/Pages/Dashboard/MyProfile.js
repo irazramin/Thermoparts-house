@@ -27,30 +27,36 @@ const MyProfile = () => {
     const github = e.target.github.value;
     const location = e.target.location.value;
 
-    const updateProfile = {
-      fName,
-      lName,
-      email,
-      location,
-      phone,
-      education,
-      linkedin,
-      github,
-    };
+    if(fName && lName && location && linkedin && email && phone && education && github){
+        const updateProfile = {
+          fName,
+          lName,
+          email,
+          location,
+          phone,
+          education,
+          linkedin,
+          github,
+        };
+            fetch(
+              `https://thermopartshouse.herokuapp.com/userprofile/${user?.email}`,
+              {
+                method: 'PUT',
+                headers: {
+                  'content-type': 'application/json',
+                },
+                body: JSON.stringify(updateProfile),
+              }
+            )
+              .then((res) => res.json())
+              .then((data) => {
+                if (data.acknowledged) {
+                  toast.success('Profile Update Successfully');
+                }
+              });
+    }
 
-    fetch(`https://thermopartshouse.herokuapp.com/userprofile/${user?.email}`, {
-      method: 'PUT',
-      headers: {
-        'content-type': 'application/json',
-      },
-      body: JSON.stringify(updateProfile),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        if (data.acknowledged) {
-          toast.success('Profile Update Successfully');
-        }
-      });
+
   };
   return (
     <div className='my-20 overflow-hidden'>
@@ -67,25 +73,40 @@ const MyProfile = () => {
               </a>
               <div className='p-6'>
                 <h5 className='text-gray-900 text-center text-xl font-medium mb-2'>
-                  {userProfiles.firstName ? userProfiles?.firstName : 'N/A'} {userProfiles.lastName ? userProfiles?.lastName : 'N/A'}
+                  {userProfiles.firstName ? userProfiles?.firstName : 'N/A'}{' '}
+                  {userProfiles.lastName ? userProfiles?.lastName : 'N/A'}
                 </h5>
                 <div className='mt-10'>
                   <p className='text-gray-900 text-base mb-3 font-medium'>
-                    Education : <span> {userProfiles.education ? userProfiles?.education : "N/A"}</span>
+                    Education :{' '}
+                    <span>
+                      {' '}
+                      {userProfiles.education ? userProfiles?.education : 'N/A'}
+                    </span>
                   </p>
                   <p className='text-gray-900 text-base mb-3 font-medium'>
-                    Location : <span>{userProfiles.location ? userProfiles?.location : "N/A"}</span>
+                    Location :{' '}
+                    <span>
+                      {userProfiles.location ? userProfiles?.location : 'N/A'}
+                    </span>
                   </p>
                   <p className='text-gray-900 text-base mb-3 font-medium'>
-                    phone : <span> {userProfiles.phone ? userProfiles?.phone : "N/A"}</span>
+                    phone :{' '}
+                    <span>
+                      {' '}
+                      {userProfiles.phone ? userProfiles?.phone : 'N/A'}
+                    </span>
                   </p>
                 </div>
                 <div className='mt-5 text-gray-700'>
                   <h3>Social Links</h3>
                   <a
-                    href={userProfiles.linkedin ? userProfiles?.linkedin : 'N/A'}
+                    href={
+                      userProfiles.linkedin ? userProfiles?.linkedin : 'N/A'
+                    }
                     target='_blank'
-                    className='text-gray-900 text-base  font-bold ' rel="noreferrer"
+                    className='text-gray-900 text-base  font-bold '
+                    rel='noreferrer'
                   >
                     {' '}
                     LinkedIn{' '}
@@ -94,7 +115,8 @@ const MyProfile = () => {
                   <a
                     href={userProfiles.github ? userProfiles?.github : 'N/A'}
                     target='_blank'
-                    className='text-gray-900 text-base  font-bold ' rel="noreferrer"
+                    className='text-gray-900 text-base  font-bold '
+                    rel='noreferrer'
                   >
                     {' '}
                     Github{' '}
@@ -134,6 +156,7 @@ const MyProfile = () => {
                         lg:mb-10
                         mb-5
                         '
+                        required
                       />
                       <input
                         type='email'
@@ -157,6 +180,7 @@ const MyProfile = () => {
                         lg:mb-10
                         mb-5
                         '
+                        required
                       />
                       <input
                         type='text'
@@ -178,6 +202,7 @@ const MyProfile = () => {
                         lg:mb-10
                         mb-5
                         '
+                        required
                       />
                       <input
                         type='text'
@@ -199,6 +224,7 @@ const MyProfile = () => {
                         lg:mb-10
                         mb-5
                         '
+                        required
                       />
                     </div>
                     <div>
@@ -222,6 +248,7 @@ const MyProfile = () => {
                         lg:mb-10
                         mb-5
                         '
+                        required
                       />
                       <input
                         type='number'
@@ -243,6 +270,7 @@ const MyProfile = () => {
                         lg:mb-10
                         mb-5
                         '
+                        required
                       />
                       <input
                         type='text'
@@ -264,6 +292,7 @@ const MyProfile = () => {
                         lg:mb-10
                         mb-5
                         '
+                        required
                       />
                       <input
                         type='text'
@@ -285,10 +314,13 @@ const MyProfile = () => {
                         lg:mb-10
                         mb-5
                         '
+                        required
                       />
                     </div>
                   </div>
-                  <button className='btn btn-primary '>Update Profile</button>
+                  <button className='inline-block px-6 py-2.5 bg-primary text-white font-medium text-xs leading-tight uppercase rounded shadow-md  hover:shadow-lg  focus:shadow-lg focus:outline-none focus:ring-0  active:shadow-lg transition duration-150 ease-in-out'>
+                    Update Profile
+                  </button>
                 </form>
               </div>
             </div>

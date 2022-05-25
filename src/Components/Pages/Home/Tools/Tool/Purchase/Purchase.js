@@ -138,9 +138,11 @@ const Purchase = () => {
 
           <div className='text-right'>
             <button
-              disabled={inputQuantity < tool.moq || inputQuantity > tool.available}
+              disabled={
+                inputQuantity < tool.moq || inputQuantity > tool.available
+              }
               onClick={() => setIsModalOpen(true)}
-              className='relative bottom-0 ml-auto btn btn-outline  text-white  mt-10 -mr-7 modal-button'
+              className='relative bottom-0 ml-auto  mt-10 -mr-7 modal-button inline-block px-6 py-2 border-[1px] border-white text-white font-medium text-xs leading-tight uppercase rounded hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out'
             >
               Place Order
             </button>
