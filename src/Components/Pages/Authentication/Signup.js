@@ -1,6 +1,7 @@
 import React from 'react';
 import {
   useCreateUserWithEmailAndPassword,
+  useSendEmailVerification,
   useSignInWithGoogle,
   useUpdateProfile
 } from 'react-firebase-hooks/auth';
@@ -17,6 +18,8 @@ const Signup = () => {
     formState: { errors },
     handleSubmit,
   } = useForm();
+    const [sendEmailVerification, sending, error3] =
+      useSendEmailVerification(auth);
   const [updateProfile, updating, updateError] = useUpdateProfile(auth);
   const [signInWithGoogle, user2, loading2, error2] = useSignInWithGoogle(auth);
   const [createUserWithEmailAndPassword, user, loading, error] =
@@ -34,7 +37,8 @@ const Signup = () => {
   const onSubmit = async (data) => {
     await createUserWithEmailAndPassword(data.email, data.password).then(() => {
       if (!error) {
-        toast.success('Signup successful');
+        toast.success('Signup successful.Check email for verification.');
+        sendEmailVerification()
       }
     });
     await updateProfile({ displayName: data.name });
@@ -204,7 +208,7 @@ const Signup = () => {
                   </div>
 
                   <p className='mt-5 text-warning'>
-                    {error || error2 ? error?.message || error2?.message : ''}
+                    {error || error2 || error3 ? error?.message || error2?.message : ''}
                   </p>
                 </form>
                 <p className='text-base mb-6 text-[#adadad]'>Connect With</p>
