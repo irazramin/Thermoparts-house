@@ -62,6 +62,7 @@ const AddProduct = () => {
                         focus-visible:shadow-none
                         focus:border-primary
                         mb-5
+                        text-gray-900
                         '
               />
               <input
@@ -83,6 +84,7 @@ const AddProduct = () => {
                         focus-visible:shadow-none
                         focus:border-primary
                         mb-5
+                        text-gray-900
                         '
               />
             </div>
@@ -106,6 +108,7 @@ const AddProduct = () => {
                         focus-visible:shadow-none
                         focus:border-primary
                         mb-5
+                        text-gray-900
                         '
               />
               <input
@@ -127,6 +130,7 @@ const AddProduct = () => {
                         focus-visible:shadow-none
                         focus:border-primary
                         mb-5
+                        text-gray-900
                         '
               />
             </div>
@@ -149,6 +153,7 @@ const AddProduct = () => {
                         focus-visible:shadow-none
                         focus:border-primary
                         mb-5
+                        text-gray-900
                         '
             />
             <textarea

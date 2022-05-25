@@ -4,6 +4,7 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
 import auth from "../../Firebase.init";
 import CustomLink from './CustomLink';
+import appbarlogo from '../../assests/appbarlogo.png';
 const Header = () => {
   const [user] = useAuthState(auth);
 
@@ -57,7 +58,7 @@ const Header = () => {
              <div>
                <Link
                  to='/login'
-                 className='btn btn-primary btn-sm text-white mx-1 my-1 lg:my-0 '
+                 className='inline-block px-6 py-2.5 bg-primary text-white font-medium text-xs leading-tight uppercase rounded shadow-md  hover:shadow-lg  focus:shadow-lg focus:outline-none focus:ring-0  active:shadow-lg transition duration-150 ease-in-out mx-1'
                >
                  Login
                </Link>
@@ -65,7 +66,7 @@ const Header = () => {
              <div>
                <Link
                  to='/signup'
-                 className='btn btn-outline btn-sm text-primary mx-1 hover:bg-primary my-1 lg:my-0 '
+                 className='inline-block px-6 py-2 border-[1px] border-primary text-black hover:text-white font-medium text-xs leading-tight uppercase rounded hover:bg-primary transition duration-150 ease-in-out mx-1 '
                >
                  Signup
                </Link>
@@ -103,7 +104,7 @@ const Header = () => {
             </ul>
           </div>
           <Link to='/' className='text-xl font-bold active:scale-105'>
-              ThermopartHouse
+              <img src={appbarlogo} alt="" />
           </Link>
         </div>
         <div className='navbar-center hidden lg:flex navbar-end'>

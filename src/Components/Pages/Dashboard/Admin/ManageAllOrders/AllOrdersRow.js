@@ -65,7 +65,7 @@ const AllOrdersRow = ({ order, idx, setIsModalOpen, setProductId,refetch }) => {
           'N/A'
         )}
       </td>
-      <td className='text-right'>
+      <td className='text-center'>
         <>
           {paid ? (
             <>
@@ -75,21 +75,29 @@ const AllOrdersRow = ({ order, idx, setIsModalOpen, setProductId,refetch }) => {
             </>
           ) : (
             <>
-              <span className='text-xs inline-block py-1 px-2.5 leading-none text-center whitespace-nowrap align-baseline font-bold bg-yellow-600 text-white rounded-full'>
-                Unpaid
-              </span>
+              <div className='flex justify-evenly items-center'>
+                <span className='text-xs inline-block py-1 px-2.5 leading-none text-center whitespace-nowrap align-baseline font-bold bg-yellow-600 text-white rounded-full'>
+                  Unpaid
+                </span>
+                <button
+                  onClick={() => handleCancelOrder(_id)}
+                  className='inline-block px-6 py-2.5 bg-red-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-red-700 hover:shadow-lg focus:bg-red-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-red-800 active:shadow-lg transition duration-150 ease-in-out'
+                >
+                  Cancel
+                </button>
+              </div>
             </>
           )}
         </>
       </td>
-      <td className='text-right'>
-        <button
-          onClick={() => handleCancelOrder(_id)}
-          className='inline-block px-6 py-2.5 bg-red-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-red-700 hover:shadow-lg focus:bg-red-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-red-800 active:shadow-lg transition duration-150 ease-in-out'
-        >
-          Cancel
-        </button>
-      </td>
+      {/* <td className='text-right'>
+      {
+        !paid ?
+      
+        :
+        ''
+      }
+      </td> */}
     </tr>
   );
 };

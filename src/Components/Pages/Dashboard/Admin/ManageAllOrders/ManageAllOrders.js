@@ -51,7 +51,6 @@ const ManageAllOrders = () => {
                   <th>Transaction Id</th>
                   <th>Shipping Status</th>
                   <th>Payment Status</th>
-                  <th>Action</th>
                 </tr>
               </thead>
               <tbody>
