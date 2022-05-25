@@ -26,7 +26,7 @@ const ManageAllOrders = () => {
   }
 
   return (
-    <div className='mt-10 relative'>
+    <div className='mt-10 mb-28 relative'>
       {allOrder.length === 0 ? (
         <>
           <h2 className='text-center flex items-center justify-center h-screen text-4xl -mt-28'>
@@ -35,9 +35,11 @@ const ManageAllOrders = () => {
         </>
       ) : (
         <>
-          <h2 className='my-5 text-2xl font-bold text-gray-900'>All orders</h2>
+          <h2 className='my-10 text-2xl font-bold text-gray-900'>
+            All orders
+          </h2>
           <div className='overflow-x-auto'>
-            <table className='table w-full'>
+            <table className='table min-w-full'>
               <thead>
                 <tr className='text-center'>
                   <th></th>

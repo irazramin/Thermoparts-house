@@ -15,7 +15,14 @@ const ManageProductRow = ({ product,idx,setIsModalOpen,setProductId }) => {
       <td>{available}</td>
       <td>{moq}</td>
       <td>{price}</td>
-      <td><button onClick={() => handleDeleteProduct(_id)} className='btn btn-sm btn-primary text-white'>Delete</button></td>
+      <td>
+        <button
+          onClick={() => handleDeleteProduct(_id)}
+          className='relative bottom-0 ml-auto modal-button inline-block px-6 py-2 border-[1px] border-white  font-medium text-xs leading-tight uppercase rounded hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out text-white bg-red-500'
+        >
+          Delete
+        </button>
+      </td>
     </tr>
   );
 };

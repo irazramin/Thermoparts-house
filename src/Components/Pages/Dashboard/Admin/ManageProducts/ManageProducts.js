@@ -28,7 +28,7 @@ const ManageProducts = () => {
    
 
   return (
-    <div className='mt-10 relative'>
+    <div className='my-10 relative overflow-y-hidden'>
       {product.length === 0 ? (
         <>
           <h2 className='text-center flex items-center justify-center h-screen text-4xl -mt-28'>

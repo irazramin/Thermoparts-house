@@ -6,7 +6,7 @@ const Tool = ({tool}) => {
     const navigate = useNavigate()
   return (
     <>
-      <div className='card card-side text-gray-900 shadow-xl flex flex-col md:flex-row border-[1px]  border-primary'>
+      <div className='card card-side text-gray-900 shadow-xl flex flex-col md:flex-row border-[1px]  border-primary bg-white'>
         <figure>
           <img className='w-[200px] h-[200px] p-10' src={img} alt='Movie' />
         </figure>

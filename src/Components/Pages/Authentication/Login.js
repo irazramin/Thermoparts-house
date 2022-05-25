@@ -480,20 +480,20 @@ const Login = () => {
           id='authentication-modal'
           tabindex='-1'
           aria-hidden='true'
-          class={`${
+          className={`${
             isModalOpen ? 'block' : 'hidden'
           } overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 w-full md:inset-0 h-modal md:h-full justify-center items-center flex justify-center items-center`}
         >
-          <div class='relative p-4 w-full max-w-md h-full md:h-auto'>
-            <div class='relative bg-white rounded-lg shadow-lg '>
+          <div className='relative p-4 w-full max-w-md h-full md:h-auto'>
+            <div className='relative bg-white rounded-lg shadow-lg '>
               <button
               onClick={() => setIsModalOpen(false)}
                 type='button'
-                class='absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-800 dark:hover:text-white'
+                className='absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-800 dark:hover:text-white'
                 data-modal-toggle='authentication-modal'
               >
                 <svg
-                  class='w-5 h-5'
+                  className='w-5 h-5'
                   fill='currentColor'
                   viewBox='0 0 20 20'
                   xmlns='http://www.w3.org/2000/svg'
@@ -505,11 +505,11 @@ const Login = () => {
                   ></path>
                 </svg>
               </button>
-              <div class='py-6 px-6 lg:px-8'>
-                <h3 class='mb-4 text-xl font-medium text-gray-900'>
+              <div className='py-6 px-6 lg:px-8'>
+                <h3 className='mb-4 text-xl font-medium text-gray-900'>
                   Reset your password
                 </h3>
-                <form class='space-y-6' action='#' onSubmit={handleResetPassword}>
+                <form className='space-y-6' action='#' onSubmit={handleResetPassword}>
                   <div className='mb-6'>
                     <input
                       name='resetInput'
@@ -536,7 +536,7 @@ const Login = () => {
                   </div>
                   <button
                     type='submit'
-                    class='w-full text-white bg-primary hover:bg-primary focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary dark:hover:bg-primary'
+                    className='w-full text-white bg-primary hover:bg-primary focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary dark:hover:bg-primary'
                   >
                     Reset
                   </button>

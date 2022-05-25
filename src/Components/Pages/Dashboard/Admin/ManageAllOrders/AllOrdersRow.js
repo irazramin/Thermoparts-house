@@ -11,7 +11,7 @@ const AllOrdersRow = ({ order, idx, setIsModalOpen, setProductId,refetch }) => {
    };
 
    const handleShipment = (id) =>{
-     fetch(`http://localhost:5000/admin/order/allorder/shipment/${id}`, {
+     fetch(`https://thermopartshouse.herokuapp.com/admin/order/allorder/shipment/${id}`, {
        method: 'PUT',
        headers: {
          'content-type': 'application/json',
@@ -29,9 +29,9 @@ const AllOrdersRow = ({ order, idx, setIsModalOpen, setProductId,refetch }) => {
   return (
     <tr className='text-gray-800 text-center'>
       <th>{idx + 1}</th>
-      <td>{_id}</td>
+      <td>{_id.slice(0, 5) + '...'}</td>
       <td>{name}</td>
-      <td>{partsName}</td>
+      <td className='text-left'>{partsName.slice(0, 10)}</td>
       <td>{quantity}</td>
       <td>{totalAmount}</td>
       <td>{transactionId ? transactionId : 'N/A'}</td>
@@ -69,13 +69,13 @@ const AllOrdersRow = ({ order, idx, setIsModalOpen, setProductId,refetch }) => {
         <>
           {paid ? (
             <>
-              <span class='text-xs inline-block py-1 px-2.5 leading-none text-center whitespace-nowrap align-baseline font-bold bg-green-600 text-white rounded-full'>
+              <span className='text-xs inline-block py-1 px-2.5 leading-none text-center whitespace-nowrap align-baseline font-bold bg-green-600 text-white rounded-full'>
                 Paid
               </span>
             </>
           ) : (
             <>
-              <span class='text-xs inline-block py-1 px-2.5 leading-none text-center whitespace-nowrap align-baseline font-bold bg-yellow-600 text-white rounded-full'>
+              <span className='text-xs inline-block py-1 px-2.5 leading-none text-center whitespace-nowrap align-baseline font-bold bg-yellow-600 text-white rounded-full'>
                 Unpaid
               </span>
             </>

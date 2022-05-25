@@ -1,14 +1,14 @@
-# Hello there 🤚, Welcome to thermopart house
+# Hello there 🤚, Welcome to thermoparts house
 
-This website is make for customer can order all kind of parts which is related to Air Conditions(AC). There are two part in this website one is normal user can order product and another one is admin. Admin can add new part,order shipped and delete product.
+This website is made for, the customer can order all kinds of parts which is related to Air Conditions(AC). There are two-part to this website one is the normal user can order products and another one is admin. Admin can add new parts, order shipped, and delete products.
 
 ##### This is a MERN STACK project
 
 
-You can find the website via : [Thermoparts House](https://ac-manufacture.web.app/)
+You can find the website via [Thermoparts House](https://ac-manufacture.web.app/)
 
 
-This project is made with these technologies :
+This project is made with these technologies:
 ### For frontend part
      Javascript / ReactJs
      Firebase authentication system (Login/ Signup)

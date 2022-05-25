@@ -6,11 +6,11 @@ import pic from "../../../assests/my_pic.jpg";
 import Footer from '../../Shared/Footer';
 const MyPortfolio = () => {
   return (
-    <div className='bg-slate-50 min-h-screen'>
+    <div className='bg-slate-50 min-h-screen px-6'>
       <div className='container mx-auto my-20'>
-        <div className='grid lg:grid-cols-5 grid-cols-1 gap-5 '>
-          <div className='  col-span-3'>
-            <div className='bg-white p-10'>
+        <div className='grid lg:grid-cols-5 grid-cols-1 gap-5 space-y-reverse'>
+          <div className='  lg:col-span-3'>
+            <div className='bg-white lg:p-10 p-5'>
               <h4 className='text-lg text-gray-900'>Hello</h4>
               <h2 className='text-5xl font-bold text-gray-900'>
                 I'm <span className='text-primary'>Iraz</span> Ramin
@@ -139,11 +139,11 @@ const MyPortfolio = () => {
               </div>
             </div>
           </div>
-          <div className='col-span-2  w-full'>
+          <div className='lg:col-span-2  w-full'>
             <div className='bg-white p-10'>
               <div className='flex justify-center items-center'>
-                <div class='avatar'>
-                  <div class='w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2'>
+                <div className='avatar'>
+                  <div className='w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2'>
                     <img src={pic} />
                   </div>
                 </div>

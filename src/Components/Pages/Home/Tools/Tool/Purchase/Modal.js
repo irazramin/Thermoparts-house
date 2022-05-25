@@ -51,20 +51,20 @@ const Modal = ({ user, tool, inputQuantity, isModalOpen, setIsModalOpen }) => {
         id='authentication-modal'
         tabindex='-1'
         aria-hidden='true'
-        class={`${
+        className={`${
           isModalOpen ? 'block' : 'hidden'
         } flex  justify-center items-center shadow-2xl overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 w-full md:inset-0 h-modal md:h-full`}
       >
-        <div class='relative p-4 w-full max-w-md h-full md:h-auto'>
-          <div class='relative bg-white text-gray-900 rounded-lg shadow '>
+        <div className='relative p-4 w-full max-w-md h-full md:h-auto'>
+          <div className='relative bg-white text-gray-900 rounded-lg shadow '>
             <button
               onClick={() => setIsModalOpen(false)}
               type='button'
-              class='absolute top-2 right-2 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-800 '
+              className='absolute top-2 right-2 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-800 '
               data-modal-toggle='authentication-modal'
             >
               <svg
-                class='w-5 h-5'
+                className='w-5 h-5'
                 fill='currentColor'
                 viewBox='0 0 20 20'
                 xmlns='http://www.w3.org/2000/svg'
