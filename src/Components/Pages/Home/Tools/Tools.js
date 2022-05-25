@@ -12,8 +12,7 @@ const Tools = () => {
     fetch(`https://thermopartshouse.herokuapp.com/tools`)
       .then((res) => res.json())
       .then((data) => {
-        const reverseData = [].concat(data).reverse();
-        setTools(reverseData);
+        setTools(data);
         setIsLoading(false)
       });
   }, []);

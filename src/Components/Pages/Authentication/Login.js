@@ -11,6 +11,7 @@ import { toast } from 'react-toastify';
 import auth from '../../../Firebase.init';
 import useToken from '../../hooks/useToken';
 import Loading from '../../Shared/Loading';
+import applogo from '../../../assests/appbarlogo.png';
 
 const Login = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -85,12 +86,9 @@ const Login = () => {
                 <div className='mb-10 md:mb-16 text-center'>
                   <a
                     href='javascript:void(0)'
-                    className='inline-block max-w-[160px] mx-auto'
+                    className='inline-block max-w-[250px] mx-auto'
                   >
-                    <img
-                      src='https://cdn.tailgrids.com/1.0/assets/images/logo/logo.svg'
-                      alt='logo'
-                    />
+                    <img src={applogo} alt='logo' />
                   </a>
                 </div>
                 <form onSubmit={handleSubmit(onSubmit)}>
@@ -111,6 +109,7 @@ const Login = () => {
                         outline-none
                         focus-visible:shadow-none
                         focus:border-primary
+                        text-gray-900
                         '
                       {...register('email', {
                         required: {
@@ -149,6 +148,7 @@ const Login = () => {
                         outline-none
                         focus-visible:shadow-none
                         focus:border-primary
+                        text-gray-900
                         '
                       {...register('password', {
                         required: {
@@ -195,7 +195,9 @@ const Login = () => {
                   </div>
 
                   <p className='mt-5 text-warning'>
-                    {error || error2 || error3 ? error?.message || error2?.message : ''}
+                    {error || error2 || error3
+                      ? error?.message || error2?.message
+                      : ''}
                   </p>
                 </form>
                 <p className='text-base mb-6 text-[#adadad]'>Connect With</p>
@@ -487,7 +489,7 @@ const Login = () => {
           <div className='relative p-4 w-full max-w-md h-full md:h-auto'>
             <div className='relative bg-white rounded-lg shadow-lg '>
               <button
-              onClick={() => setIsModalOpen(false)}
+                onClick={() => setIsModalOpen(false)}
                 type='button'
                 className='absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-800 dark:hover:text-white'
                 data-modal-toggle='authentication-modal'
@@ -509,7 +511,11 @@ const Login = () => {
                 <h3 className='mb-4 text-xl font-medium text-gray-900'>
                   Reset your password
                 </h3>
-                <form className='space-y-6' action='#' onSubmit={handleResetPassword}>
+                <form
+                  className='space-y-6'
+                  action='#'
+                  onSubmit={handleResetPassword}
+                >
                   <div className='mb-6'>
                     <input
                       name='resetInput'
@@ -530,9 +536,7 @@ const Login = () => {
                         focus-visible:shadow-none
                         focus:border-primary
                         '
-              
                     />
-                 
                   </div>
                   <button
                     type='submit'

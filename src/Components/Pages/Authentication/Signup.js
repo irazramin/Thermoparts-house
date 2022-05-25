@@ -8,10 +8,10 @@ import {
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import applogo from "../../../assests/appbarlogo.png";
 import auth from '../../../Firebase.init';
 import useToken from '../../hooks/useToken';
 import Loading from '../../Shared/Loading';
-
 const Signup = () => {
   const {
     register,
@@ -67,12 +67,9 @@ const Signup = () => {
                 <div className='mb-10 md:mb-16 text-center'>
                   <a
                     href='javascript:void(0)'
-                    className='inline-block max-w-[160px] mx-auto'
+                    className='inline-block max-w-[250px] mx-auto'
                   >
-                    <img
-                      src='https://cdn.tailgrids.com/1.0/assets/images/logo/logo.svg'
-                      alt='logo'
-                    />
+                    <img  src={applogo} alt='logo' />
                   </a>
                 </div>
                 <form onSubmit={handleSubmit(onSubmit)}>
@@ -93,6 +90,7 @@ const Signup = () => {
                         outline-none
                         focus-visible:shadow-none
                         focus:border-primary
+                        to-gray-900
                         '
                       {...register('name', {
                         required: {
@@ -124,6 +122,7 @@ const Signup = () => {
                         outline-none
                         focus-visible:shadow-none
                         focus:border-primary
+                        to-gray-900
                         '
                       {...register('email', {
                         required: {
@@ -162,6 +161,7 @@ const Signup = () => {
                         outline-none
                         focus-visible:shadow-none
                         focus:border-primary
+                        to-gray-900
                         '
                       {...register('password', {
                         required: {
@@ -208,12 +208,17 @@ const Signup = () => {
                   </div>
 
                   <p className='mt-5 text-warning'>
-                    {error || error2 || error3 ? error?.message || error2?.message : ''}
+                    {error || error2 || error3
+                      ? error?.message || error2?.message
+                      : ''}
                   </p>
                 </form>
                 <p className='text-base mb-6 text-[#adadad]'>Connect With</p>
                 <ul className='flex justify-center items-center -mx-2 mb-6'>
-                  <li className='px-2 w-[140px]' onClick={() => signInWithGoogle()}>
+                  <li
+                    className='px-2 w-[140px]'
+                    onClick={() => signInWithGoogle()}
+                  >
                     <a
                       href='javascript:void(0)'
                       className='
