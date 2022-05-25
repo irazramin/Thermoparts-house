@@ -12,7 +12,8 @@ const Tools = () => {
     fetch(`https://thermopartshouse.herokuapp.com/tools`)
       .then((res) => res.json())
       .then((data) => {
-        setTools(data.reverse());
+        const reverseData = [].concat(data).reverse();
+        setTools(reverseData);
         setIsLoading(false)
       });
   }, []);
@@ -23,7 +24,7 @@ const Tools = () => {
   return (
     <div className='container mx-auto mb-6 px-6'>
       <h3 className='my-10 text-3xl text-gray-900 text-center mb-6 font-semibold uppercase'>
-        Our <span className='text-accent'>manufacture tools</span>
+        Our <span className='text-accent'>manufacture parts</span>
       </h3>
       <div className='grid grid-cols-1 lg:grid-cols-2  gap-8'>
         {tools.slice(0,6).map((tool) => (

@@ -6,8 +6,8 @@ import pic from "../../../assests/my_pic.jpg";
 import Footer from '../../Shared/Footer';
 const MyPortfolio = () => {
   return (
-    <div className='bg-slate-50 min-h-screen px-6'>
-      <div className='container mx-auto my-20'>
+    <div className='bg-slate-50 min-h-screen '>
+      <div className='container mx-auto my-20 px-6'>
         <div className='grid lg:grid-cols-5 grid-cols-1 gap-5 space-y-reverse'>
           <div className='  lg:col-span-3'>
             <div className='bg-white lg:p-10 p-5'>
