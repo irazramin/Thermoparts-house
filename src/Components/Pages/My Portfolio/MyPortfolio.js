@@ -104,64 +104,103 @@ const MyPortfolio = () => {
                     </a>
                   </p>
                 </div>
-              </div>
-            </div>
-          </div>
-          <div className='col-span-2 bg-white p-10 w-full'>
-            <div className='flex justify-center items-center'>
-              <div class='avatar'>
-                <div class='w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2'>
-                  <img src={pic} />
+                <div className='mt-5'>
+                  <strong className='text-gray-900 text-base'>
+                    <small>3. Project Name: Watch reviews & analytics</small>
+                  </strong>
+                  <p>
+                    This is a simple review and analytics-based react website,
+                    there are 4 types of charts in the dashboard.
+                  </p>
+                  <p className='mt-2'>
+                    {' '}
+                    <strong>Technologies Used:</strong> React.Js, React router,
+                    Recharts, React rating.
+                  </p>
+                  <p>
+                    <strong> Project Link: </strong>{' '}
+                    <a
+                      href='https://github.com/irazramin/watch-reviews-analytics'
+                      target='_blank'
+                      rel='noreferrer'
+                    >
+                      Frontend{' '}
+                    </a>{' '}
+                    |
+                    <a
+                      href='https://reviews-and-analytics.vercel.app/'
+                      target='_blank'
+                      rel='noreferrer'
+                    >
+                      Live
+                    </a>
+                  </p>
                 </div>
               </div>
             </div>
-            <div className='text-center mt-5'>
-              <p className='text-gray-900 text-lg font-bold'>Iraz Ramin Bayejid</p>
-              <span className='text-gray-900 text-base'>
-                Frontend Developer
-              </span>
-            </div>
-
-            <div className='mt-5'>
-              <span className='text-sm text-gray-500'>Email Address </span>
-              <p className='text-gray-900'>irazramin@gmail.com</p>
-            </div>
-            <div className='mt-5'>
-              <span className='text-sm text-gray-500'>Phone </span>
-              <p className='text-gray-900'>01728257929</p>
-            </div>
-            <div className='mt-5'>
-              <span className='text-sm text-gray-500'>Home Address </span>
-              <p className='text-gray-900'>Road No: 20, Nikunja-2, Dhaka </p>
-            </div>
-            <div className='mt-5'>
-              <span className='text-sm text-gray-500'>Education </span>
-              <p className='text-gray-900'>
-                <span className='text-lg font-semibold'>
-                  {' '}
-                  Computer Science & Engineering
+          </div>
+          <div className='col-span-2  w-full'>
+            <div className='bg-white p-10'>
+              <div className='flex justify-center items-center'>
+                <div class='avatar'>
+                  <div class='w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2'>
+                    <img src={pic} />
+                  </div>
+                </div>
+              </div>
+              <div className='text-center mt-5'>
+                <p className='text-gray-900 text-lg font-bold'>
+                  Iraz Ramin Bayejid
+                </p>
+                <span className='text-gray-900 text-base'>
+                  Frontend Developer
                 </span>
-                <p>Primeasia University, Dhaka</p>
-                <small>Expected Graduation year : 05/2023</small>
-              </p>
-            </div>
+              </div>
 
-            <div className=' mt-5'>
-              <span className='text-sm text-gray-500'>Social Links </span>
+              <div className='mt-5'>
+                <span className='text-sm text-gray-500'>Email Address </span>
+                <p className='text-gray-900'>irazramin@gmail.com</p>
+              </div>
+              <div className='mt-5'>
+                <span className='text-sm text-gray-500'>Phone </span>
+                <p className='text-gray-900'>01728257929</p>
+              </div>
+              <div className='mt-5'>
+                <span className='text-sm text-gray-500'>Home Address </span>
+                <p className='text-gray-900'>Road No: 20, Nikunja-2, Dhaka </p>
+              </div>
+              <div className='mt-5'>
+                <span className='text-sm text-gray-500'>Education </span>
+                <p className='text-gray-900'>
+                  <span className='text-lg font-semibold'>
+                    {' '}
+                    Computer Science & Engineering
+                  </span>
+                  <p>Primeasia University, Dhaka</p>
+                  <small>Expected Graduation year : 05/2023</small>
+                </p>
+              </div>
 
-              <div className='mt-2 flex'>
-                <a className='mx-2' href='https://www.facebook.com/irazraminB/'>
-                  <img src={facebook} alt='' />
-                </a>
-                <a
-                  className='mx-2'
-                  href='https://www.linkedin.com/in/irazraminb/'
-                >
-                  <img src={linkedin} alt='' />
-                </a>
-                <a className='mx-2' href='https://github.com/irazramin'>
-                  <img src={github} alt='' />
-                </a>
+              <div className=' mt-5'>
+                <span className='text-sm text-gray-500'>Social Links </span>
+
+                <div className='mt-2 flex'>
+                  <a
+                    className='mx-2'
+                    href='https://www.facebook.com/irazraminB/'
+                  >
+                    <img src={facebook} alt='' />
+                  </a>
+                  <a
+                    className='mx-2'
+                    href='https://www.linkedin.com/in/irazraminb/'
+                  >
+                    <img src={linkedin} alt='' />
+                  </a>
+                  <a className='mx-2' href='https://github.com/irazramin'>
+                    <img src={github} alt='' />
+                  </a>
+                </div>
               </div>
             </div>
           </div>
