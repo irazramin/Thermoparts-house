@@ -6,7 +6,6 @@ const Tools = () => {
   const [tools, setTools] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 
-  console.log(tools.reverse())
   useEffect(() => {
     setIsLoading(true)
     fetch(`https://thermopartshouse.herokuapp.com/tools`)

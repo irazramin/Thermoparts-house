@@ -161,12 +161,21 @@ const PlaceOrder = ({
           </div>
 
           <div className='text-right mt-10'>
-            <input
+            {/* <input
               type='submit'
               value='Confirm Order'
               htmlFor='my-modal-3'
               className='inline-block px-6 py-2.5 bg-primary text-white font-medium text-xs leading-tight uppercase rounded shadow-md  hover:shadow-lg  focus:shadow-lg focus:outline-none focus:ring-0  active:shadow-lg transition duration-150 ease-in-out cursor-pointer'
-            />
+            /> */}
+            <button
+              type='submit'
+              disabled={
+                inputQuantity < tool.moq || inputQuantity > tool.available
+              }
+              className='btn btn-sm inline-block px-6 py-2 bg-primary text-white font-medium text-xs leading-tight uppercase rounded shadow-md  hover:shadow-lg  focus:shadow-lg focus:outline-none focus:ring-0  active:shadow-lg transition duration-150 ease-in-out cursor-pointer'
+            >
+              Place Order
+            </button>
           </div>
         </form>
       </div>
