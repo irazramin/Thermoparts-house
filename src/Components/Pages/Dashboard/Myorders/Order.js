@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Order = ({ order, idx, setIsModalOpen, setProductId }) => {
-  const { partsName, name, paid, quantity, totalAmount, transactionId, _id } =
+  const { partsName, name, paid, quantity, totalAmount, transactionId, _id,shipment } =
     order;
 
   const handleCancelOrder = (id) => {
@@ -36,6 +36,13 @@ const Order = ({ order, idx, setIsModalOpen, setProductId }) => {
               Cancel
             </button>
           </>
+        )}
+      </td>
+      <td>
+        {shipment && paid ? (
+          <p className=' badge badge-success'>Shipped</p>
+        ) : (
+          <p className=' badge badge-error'>Shipped not yet</p>
         )}
       </td>
     </tr>
